@@ -12,6 +12,6 @@ function crateWindow() {
         },
         show: false
     });
-    mainWindow.loadFile("./index.html");
+    mainWindow.loadFile("../html/index.html");
     mainWindow.on("ready-to-show", () => mainWindow.show());
 }
