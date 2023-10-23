@@ -15,6 +15,6 @@ function crateWindow() :void
         show: false
     });
 
-    mainWindow.loadFile("../html/index.html");
+    mainWindow.loadFile(__dirname + "/../html/index.html");
     mainWindow.on("ready-to-show", () => mainWindow.show())
 }
