@@ -10,8 +10,9 @@ body {
     background-color: black;
 }
 
-div#click-area {
-
+header {
+    display: flex;
+    flex-direction: row;
 }
 
 main {
