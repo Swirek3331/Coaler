@@ -1,12 +1,13 @@
-let coal: number = 0
-let money: number = 0
-let companyName: string = "Coal Inc."
+let coal: number = 0;
+let money: number = 0;
+let companyName: string = "Coal Inc.";
 
-let nameLabel = document.getElementById("company-name-display")
-let coalLabel = document.getElementById("coal-display")
-let moneyLabel = document.getElementById("money-label")
+const nameLabel = document.getElementById("company-name-display")
+const coalLabel = document.getElementById("coal-display")
+const moneyLabel = document.getElementById("money-label")
+const coalImg = document.getElementById("coal-click")
 
-function click() :void
+function coalClick() :void
 {
     coal++;
 
