@@ -10,7 +10,8 @@ function crateWindow() {
         webPreferences: {
             preload: __dirname + "/preload.js"
         },
-        show: false
+        show: false,
+        resizable: false,
     });
     mainWindow.loadFile(__dirname + "/../html/index.html");
     mainWindow.on("ready-to-show", () => mainWindow.show());
