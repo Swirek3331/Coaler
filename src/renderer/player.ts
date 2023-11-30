@@ -5,11 +5,26 @@ let companyName: string = "Coal Inc.";
 const nameLabel = document.getElementById("company-name-display")
 const coalLabel = document.getElementById("coal-display")
 const moneyLabel = document.getElementById("money-label")
-const coalImg = document.getElementById("coal-click")
 
 function coalClick() :void
 {
     coal++;
 
-    console.log(coal)
+    updateLabels();
+}
+
+function updateLabels() :void
+{
+    if (nameLabel)
+    {
+        nameLabel.innerHTML = companyName;
+    }
+    if (coalLabel)
+    {
+        coalLabel.innerHTML = "Węgiel: " + coal;
+    }
+    if (moneyLabel)
+    {
+        moneyLabel.innerHTML = "Fundusze: " + money;
+    }
 }
