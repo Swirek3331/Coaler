@@ -6,7 +6,6 @@ let companyName = "Coal Inc.";
 const nameLabel = document.getElementById("company-name-display");
 const coalLabel = document.getElementById("coal-display");
 const moneyLabel = document.getElementById("money-display");
-updateLabels();
 function coalClick() {
     coal++;
     updateLabels();

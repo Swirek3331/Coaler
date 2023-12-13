@@ -10,3 +10,7 @@
 body {
     background-color: black;
 }
+
+header {
+    padding: 1rem
+}

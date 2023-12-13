@@ -1,15 +1,14 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
-    div.labels {
-        margin: 0;
+    & div.labels {
+        
     }
 
-    div.coal {
-        margin: 40%;
+    & div.coal {
+        width: 33%;
+        margin-inline: auto;
     }
 }
 
