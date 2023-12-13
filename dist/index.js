@@ -11,8 +11,12 @@ function crateWindow() {
             preload: __dirname + "/preload.js"
         },
         show: false,
-        resizable: false,
+        resizable: true,
+        fullscreenable: true,
     });
     mainWindow.loadFile(__dirname + "/../html/index.html");
-    mainWindow.on("ready-to-show", () => mainWindow.show());
+    mainWindow.on("ready-to-show", () => {
+        mainWindow.show();
+        mainWindow.maximize();
+    });
 }
