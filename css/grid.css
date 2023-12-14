@@ -1,0 +1,11 @@
+header {
+    padding: 1rem;
+
+    & div.labels {
+        width: 50%;
+    }
+
+    & div.coal {
+
+    }
+}

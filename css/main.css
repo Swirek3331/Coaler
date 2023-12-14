@@ -12,5 +12,9 @@ body {
 }
 
 header {
-    padding: 1rem
+
+
+    & div.labels {
+
+    }
 }

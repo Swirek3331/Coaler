@@ -1,8 +1,4 @@
 "use strict";
-let coal = 0;
-let money = 0;
-let coalprice = 10;
-let companyName = "Coal Inc.";
 const nameLabel = document.getElementById("company-name-display");
 const coalLabel = document.getElementById("coal-display");
 const moneyLabel = document.getElementById("money-display");
