@@ -11,6 +11,34 @@ body {
     background-color: black;
 }
 
-header {
+aside {
+    text-align: center;
 
+    & ul {
+        list-style: none;
+
+        & li {
+            background-color: gray;
+            border: 1px solid white;
+
+            margin-inline: 25%;
+            margin-top: 1rem;
+            padding: 10px;
+
+            width: 50%;
+        }
+
+        & li:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    & nav {
+        margin-top: 10rem;
+    }
+
+    & header {
+        margin-top: 2.5rem;
+    }
 }
