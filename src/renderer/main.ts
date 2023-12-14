@@ -6,7 +6,7 @@ function coalClick() :void
     money += coalprice;
     
     console.log(money)
-    updateLabels();
+    updateLabels()
 }
 
 function updateLabels() :void
@@ -17,11 +17,11 @@ function updateLabels() :void
     }
     if (moneyLabel)
     {
-        moneyLabel.innerHTML = money.toString();
+        moneyLabel.innerHTML = money.toString()
     }
 }
 
 function quitGame() :void
 {
-    window.close();
+    window.close()
 }
