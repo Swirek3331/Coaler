@@ -11,6 +11,9 @@ function updateLabels() {
         nameLabel.innerHTML = companyName;
     }
     if (moneyLabel) {
-        moneyLabel.innerHTML = "Fundusze: " + money;
+        moneyLabel.innerHTML = money.toString();
     }
+}
+function quitGame() {
+    window.close();
 }

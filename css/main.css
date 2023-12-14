@@ -12,14 +12,14 @@ body {
 }
 
 aside {
-    text-align: center;
-
+    
     & ul {
         list-style: none;
 
         & li {
             background-color: gray;
             border: 1px solid white;
+            border-radius: 5px;
 
             margin-inline: 25%;
             margin-top: 1rem;
@@ -41,4 +41,20 @@ aside {
     & header {
         margin-top: 2.5rem;
     }
+}
+
+main {
+     
+    & h2 {
+        margin-top: 2.5rem;
+    }
+}
+
+aside, main {
+    padding: 1rem;
+    text-align: center;
+}
+
+li.strong {
+    font-weight: bolder;
 }

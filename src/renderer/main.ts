@@ -17,6 +17,11 @@ function updateLabels() :void
     }
     if (moneyLabel)
     {
-        moneyLabel.innerHTML = "Fundusze: " + money;
+        moneyLabel.innerHTML = money.toString();
     }
+}
+
+function quitGame() :void
+{
+    window.close();
 }
