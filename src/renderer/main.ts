@@ -23,5 +23,8 @@ function updateLabels() :void
 
 function quitGame() :void
 {
-    window.close()
+    if(confirm("Czy na pewno chcesz wyjść"))
+    {
+        window.close()
+    }
 }

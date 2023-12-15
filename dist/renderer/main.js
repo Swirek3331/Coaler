@@ -15,5 +15,29 @@ function updateLabels() {
     }
 }
 function quitGame() {
-    window.close();
+    if (confirm("Czy na pewno chcesz wyjść")) {
+        if (confirm("Czy na pewno chcesz wyjść")) {
+            if (confirm("Czy na pewno chcesz wyjść")) {
+                if (confirm("Czy na pewno chcesz wyjść")) {
+                    if (confirm("Czy na pewno chcesz wyjść")) {
+                        if (confirm("Czy na pewno chcesz wyjść")) {
+                            if (confirm("Czy na pewno chcesz wyjść")) {
+                                if (confirm("Czy na pewno chcesz wyjść")) {
+                                    if (confirm("Czy na pewno chcesz wyjść")) {
+                                        if (confirm("Czy na pewno chcesz wyjść")) {
+                                            if (confirm("Czy na pewno chcesz wyjść")) {
+                                                if (confirm("Czy na pewno chcesz wyjść")) {
+                                                    window.close();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
