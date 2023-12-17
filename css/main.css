@@ -58,3 +58,11 @@ aside, main {
 li.strong {
     font-weight: bolder;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.visable {
+    visibility: visible;
+}

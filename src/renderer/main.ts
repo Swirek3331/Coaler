@@ -21,10 +21,13 @@ function updateLabels() :void
     }
 }
 
-function quitGame() :void
+function quitMenuShow() :void
 {
-    if(confirm("Czy na pewno chcesz wyjść"))
+    if (main)
     {
-        window.close()
+        for (let i = 0; i < main.children.length; i++)
+        {
+            main.children[i].classList.add("hidden")
+        }
     }
 }

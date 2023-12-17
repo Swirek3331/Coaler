@@ -14,30 +14,10 @@ function updateLabels() {
         moneyLabel.innerHTML = money.toString();
     }
 }
-function quitGame() {
-    if (confirm("Czy na pewno chcesz wyjść")) {
-        if (confirm("Czy na pewno chcesz wyjść")) {
-            if (confirm("Czy na pewno chcesz wyjść")) {
-                if (confirm("Czy na pewno chcesz wyjść")) {
-                    if (confirm("Czy na pewno chcesz wyjść")) {
-                        if (confirm("Czy na pewno chcesz wyjść")) {
-                            if (confirm("Czy na pewno chcesz wyjść")) {
-                                if (confirm("Czy na pewno chcesz wyjść")) {
-                                    if (confirm("Czy na pewno chcesz wyjść")) {
-                                        if (confirm("Czy na pewno chcesz wyjść")) {
-                                            if (confirm("Czy na pewno chcesz wyjść")) {
-                                                if (confirm("Czy na pewno chcesz wyjść")) {
-                                                    window.close();
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+function quitMenuShow() {
+    if (main) {
+        for (let i = 0; i < main.children.length; i++) {
+            main.children[i].classList.add("hidden");
         }
     }
 }
