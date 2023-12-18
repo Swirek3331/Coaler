@@ -1,4 +1,8 @@
 body {
+    height: 100%;
+}
+
+main {
     margin-inline: 10%;
 
     /* Na elektronie jakoś działa gorzej vh */
@@ -9,15 +13,13 @@ aside {
     width: 40%;
 }
 
-main {
+section {
     width: 60%;
 
     & div {
         background-color: gray;
 
-        margin-top: 10rem;
-
         width: 100%;
-        height: 72.5%;
+        height: 100%;
     }
 }

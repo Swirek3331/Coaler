@@ -43,19 +43,22 @@ aside {
     }
 }
 
-main {
+section {
      
-    & h2 {
-        margin-top: 2.5rem;
+    & div {
+        & h2 {
+            text-align: right;
+            margin-top: 2.5rem;
+        }
     }
 }
 
-aside, main {
+aside, section {
     padding: 1rem;
     text-align: center;
 }
 
-li.strong {
+.gear {
     font-weight: bolder;
 }
 

@@ -4,8 +4,7 @@ const moneyLabel = document.getElementById("money-display")
 function coalClick() :void
 {
     money += coalprice;
-    
-    console.log(money)
+
     updateLabels()
 }
 
