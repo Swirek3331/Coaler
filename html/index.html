@@ -10,23 +10,24 @@
     <link rel="stylesheet" href="../css/flex.css" type="text/css"/>
     <link rel="stylesheet" href="../css/grid.css" type="text/css"/>
 
-    <link rel="icon" href="../assets/sprites/icon.ico"/>
+    <link rel="icon" href="../assets/sprites/ui/icon.ico"/>
 </head>
 <body>
     <!--
         Planowo ma się tu pokazać osobne menu
         z opcją wyjścia i autorami.
     -->
-    <li class="gear" onclick="window.close()">
-        Menu
-    </li>
+    <div class="other-options">
+        <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" onclick="menuShow()"/>
+        <img alt="autorzy" src="" onclick=""/>
+    </div>
     
     <main>
         <aside>
             <header>
                 <h1 id="company-name-display">Trzyszcze Inc.</h1>
     
-                <img alt="picture-of-coal" src="../assets/sprites/better-coal-scalled.png" onclick="coalClick()"/>
+                <img alt="picture-of-coal" src="../assets/sprites/ui/better-coal-scalled.png" onclick="coalClick()"/>
             </header>
     
             <nav>

@@ -13,7 +13,7 @@ function updateLabels() {
         moneyLabel.innerHTML = money.toString();
     }
 }
-function quitMenuShow() {
+function menuShow() {
     if (main) {
         for (let i = 0; i < main.children.length; i++) {
             main.children[i].classList.add("hidden");

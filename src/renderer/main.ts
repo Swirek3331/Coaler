@@ -20,7 +20,7 @@ function updateLabels() :void
     }
 }
 
-function quitMenuShow() :void
+function menuShow() :void
 {
     if (main)
     {
