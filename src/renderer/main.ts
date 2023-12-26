@@ -22,11 +22,5 @@ function updateLabels() :void
 
 function menuShow() :void
 {
-    if (main)
-    {
-        for (let i = 0; i < main.children.length; i++)
-        {
-            main.children[i].classList.add("hidden")
-        }
-    }
+
 }

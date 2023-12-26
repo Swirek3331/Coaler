@@ -41,6 +41,10 @@ aside {
     & header {
         margin-top: 2.5rem;
     }
+
+    & img:hover {
+        transform: scale(1.1);
+    }
 }
 
 section {
@@ -58,14 +62,10 @@ aside, section {
     text-align: center;
 }
 
-.gear {
-    font-weight: bolder;
-}
+div.other-options {
+    padding: 1rem;
 
-.hidden {
-    visibility: hidden;
-}
-
-.visable {
-    visibility: visible;
+    & * {
+        padding-bottom: 1rem;
+    }
 }

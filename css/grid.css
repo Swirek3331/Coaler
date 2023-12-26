@@ -1,20 +1,37 @@
 body {
     height: 100%;
+
+    display: grid;
+    grid-template-areas: 
+    "margin-left aside section margin-right"
+    "margin-left aside section margin-right"
+    "margin-left aside section margin-right";
+
+    grid-template-columns: 10vw 32vw 48vw 10vw;
 }
 
 main {
-    margin-inline: 10%;
 
     /* Na elektronie jakoś działa gorzej vh */
     height: 100%;
 }
 
 aside {
-    width: 40%;
+    height: 100%;
+    
+    grid-area: aside;
+}
+
+div.other-options {
+    grid-area: margin-left;
 }
 
 section {
+
+    height: 100%;
     width: 60%;
+
+    grid-area: section;
 
     & div {
         background-color: gray;
