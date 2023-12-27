@@ -28,6 +28,7 @@
             <h1 id="company-name-display">Trzyszcze Inc.</h1>
 
             <img alt="picture-of-coal" src="../assets/sprites/ui/better-coal-scalled.png" onclick="coalClick()"/>
+            <progress id="mining-progress-bar" max="10"></progress>
         </header>
 
         <nav>
@@ -50,13 +51,17 @@
         </nav>
     </aside>
 
-    <section>
+    <main>
         <div>
             <h2>
                 Fundusze: <span id="money-display">0</span>
             </h2>
         </div>
-    </section>
+    </main>
+
+    <dialog id="settings-dialog">
+        <button onclick="window.close()">Wyjście z gry</button>
+    </dialog>
 
     <script src="../dist/renderer/player.js" defer></script>
     <script src="../dist/renderer/main.js" defer></script>

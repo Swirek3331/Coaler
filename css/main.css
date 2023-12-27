@@ -45,9 +45,18 @@ aside {
     & img:hover {
         transform: scale(1.1);
     }
+
+    & progress {
+        color: green;
+        background-color: red;
+
+        width: 80%;
+
+        margin: auto;
+    }
 }
 
-section {
+main {
      
     & div {
         & h2 {
@@ -57,7 +66,7 @@ section {
     }
 }
 
-aside, section {
+aside, main {
     padding: 1rem;
     text-align: center;
 }

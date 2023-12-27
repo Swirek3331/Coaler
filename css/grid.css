@@ -3,7 +3,7 @@ body {
 
     display: grid;
     grid-template-areas: 
-    "margin-left aside section margin-right";
+    "margin-left aside main margin-right";
 
     grid-template-columns: 10vw 32vw 48vw 10vw;
 }
@@ -18,10 +18,10 @@ div.other-options {
     grid-area: margin-left;
 }
 
-section {
+main {
 
     height: 100%;
 
-    grid-area: section;
+    grid-area: main;
 
 }
