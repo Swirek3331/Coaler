@@ -1,5 +1,5 @@
 const nameLabel = document.getElementById("company-name-display")
-const moneyLabel = document.getElementById("money-display")
+const coalLabel = document.getElementById("coal-display")
 
 const settingsDialog = document.querySelector("dialog")
 const coalHealthBar = document.querySelector("progress")
@@ -8,19 +8,15 @@ function coalClick() :void
 {
     if (coalHealthBar)
     {
-        if (coalHealth > 0)
+        if (coalHealth == 0)
         {
-            coalHealth -= 1;
-            money += coalprice / 10;
+            coal += coalprice
+            coalHealth = coalHealthBar.max
         }
-        else
-        {
-            money += coalprice;
-            coalHealth = coalHealthBar.max;
-        }
-    }
 
-    updateLabels()
+        coalHealth -= 1;
+        updateLabels()
+    }
 }
 
 function updateLabels() :void
@@ -29,9 +25,9 @@ function updateLabels() :void
     {
         nameLabel.innerHTML = companyName;
     }
-    if (moneyLabel)
+    if (coalLabel)
     {
-        moneyLabel.innerHTML = money.toString()
+        coalLabel.innerHTML = coal.toString()
     }
     if (coalHealthBar)
     {

@@ -24,6 +24,7 @@
     </div>
 
     <dialog id="settings-dialog">
+        <button onclick="settingsDialog.close()">Zamknij</button>
         <button onclick="window.close()">Wyjście z gry</button>
     </dialog>
 
@@ -43,7 +44,7 @@
                     Produkcja
                 </li>
                 <li>
-                    Sprzedaż
+                    Sklep
                 </li>
                 <li>
                     Emisja
@@ -58,7 +59,7 @@
     <main>
         <div>
             <h2>
-                Fundusze: <span id="money-display">0</span>
+                <img src="../assets/sprites/ui/better-coal-smaller.png"> <span id="coal-display">0</span>
             </h2>
         </div>
     </main>
