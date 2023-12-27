@@ -1,6 +1,4 @@
 body {
-    height: 100%;
-
     display: grid;
     grid-template-areas: 
     "margin-left aside main margin-right";
@@ -9,8 +7,6 @@ body {
 }
 
 aside {
-    height: 100%;
-    
     grid-area: aside;
 }
 
@@ -19,9 +15,5 @@ div.other-options {
 }
 
 main {
-
-    height: 100%;
-
     grid-area: main;
-
 }
