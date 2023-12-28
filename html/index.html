@@ -18,14 +18,24 @@
         z opcją wyjścia i autorami.
     -->
     <div class="other-options">
-        <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" onclick="menuShow()"/>
+        <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" onclick="showSettingsDialog()"/>
         <br/>
         <img alt="autorzy" src="" onclick=""/>
     </div>
 
-    <dialog id="settings-dialog">
-        <button onclick="settingsDialog.close()">Zamknij</button>
-        <button onclick="window.close()">Wyjście z gry</button>
+    <dialog id="settings-dialog" class="settings">
+        <h2>Ustawienia i wyjśćie</h2>
+
+        <form method="dialog" action="">
+            <div>
+                <label for="name-input">Nazwa spółki</label>
+                <input type="text" id="name-input" name="name-input"/>
+            </div>
+        </form>
+
+        <button onclick="saveSettings()">Zapisz</button>
+        <button onclick="settingsDialog.close()">Zamknij okno</button>
+        <button onclick="window.close()">Wyjdź z gry</button>
     </dialog>
 
     <aside>
@@ -67,5 +77,6 @@
     <script src="../dist/renderer/player.js" defer></script>
     <script src="../dist/renderer/main.js" defer></script>
     <script src="../dist/renderer/start.js" defer></script>
+    <script src="../dist/renderer/menu.js" defer></script>
 </body>
 </html>

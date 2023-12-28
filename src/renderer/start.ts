@@ -1,1 +1,3 @@
+coalHealthBar.max = coalHealth
+
 updateLabels()
