@@ -74,15 +74,19 @@ aside {
 }
 
 main {
-
-    background-color: grey;
-
-    margin-top: 2.5rem;
-
     height: 100%;
      
     & h2 {
         text-align: right;
+    }
+
+    & div {
+        background-color: grey;
+        background-repeat: no-repeat;
+
+        margin-top: 2.5rem;
+
+        height: 100%;
     }
 }
 

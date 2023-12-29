@@ -9,3 +9,16 @@ function saveSettings() {
     companyName = nameInput.value;
     updateLabels();
 }
+//tymaczasowe
+let shopOpen = false;
+function showShop() {
+    const div = main.querySelector("div");
+    if (!shopOpen) {
+        div.style.backgroundImage = "url(../assets/sprites/ui/sklep-full-scalled.png)";
+        shopOpen = true;
+    }
+    else {
+        div.style.backgroundImage = "none";
+        shopOpen = false;
+    }
+}

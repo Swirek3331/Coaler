@@ -3,6 +3,7 @@ const coalLabel = document.getElementById("coal-display")  as HTMLDialogElement
 
 const settingsDialog = document.querySelector("dialog#settings-dialog") as HTMLDialogElement
 const coalHealthBar = document.querySelector("progress") as HTMLProgressElement
+const main = document.querySelector("main") as HTMLElement
 
 function coalClick() :void
 {
@@ -11,8 +12,10 @@ function coalClick() :void
         coal += coalAmount
         coalHealth = coalHealthBar.max
     }
-
-    coalHealth -= 1;
+    else
+    {
+        coalHealth -= 1;
+    }
     updateLabels()
 }
 

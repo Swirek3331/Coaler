@@ -3,12 +3,15 @@ const nameLabel = document.getElementById("company-name-display");
 const coalLabel = document.getElementById("coal-display");
 const settingsDialog = document.querySelector("dialog#settings-dialog");
 const coalHealthBar = document.querySelector("progress");
+const main = document.querySelector("main");
 function coalClick() {
     if (coalHealth == 0) {
         coal += coalAmount;
         coalHealth = coalHealthBar.max;
     }
-    coalHealth -= 1;
+    else {
+        coalHealth -= 1;
+    }
     updateLabels();
 }
 function updateLabels() {
