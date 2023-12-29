@@ -18,7 +18,7 @@
         z opcją wyjścia i autorami.
     -->
     <div class="other-options">
-        <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" onclick="showSettingsDialog()"/>
+        <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" id="zombek"/>
         <br/>
         <img alt="autorzy" src="" onclick=""/>
     </div>
@@ -31,11 +31,12 @@
                 <label for="name-input">Nazwa spółki</label>
                 <input type="text" id="name-input" name="name-input"/>
             </div>
+
         </form>
 
-        <button onclick="saveSettings()">Zapisz</button>
-        <button onclick="settingsDialog.close()">Zamknij okno</button>
-        <button onclick="window.close()">Wyjdź z gry</button>
+        <button id="save-settings">Zapisz</button>
+        <button id="close-settings">Zamknij okno</button>
+        <button id="exit-game">Wyjdź z gry</button>
     </dialog>
 
     <aside>
@@ -46,14 +47,14 @@
             <progress id="mining-progress-bar" max="10"></progress>
         </header>
 
-        <nav>
+        <nav id="menu">
             <h2>Kategorie</h2>
 
             <ul>
                 <li>
                     Produkcja
                 </li>
-                <li onclick="showShop()">
+                <li id="shop-button">
                     Sklep
                 </li>
                 <li>
@@ -75,9 +76,12 @@
         </div>
     </main>
 
+    <script src="../dist/renderer/getter.js" defer></script>
     <script src="../dist/renderer/player.js" defer></script>
-    <script src="../dist/renderer/main.js" defer></script>
+    <script src="../dist/renderer/ui.js" defer></script>
     <script src="../dist/renderer/start.js" defer></script>
+
+    <script src="../dist/renderer/settings.js" defer></script>
     <script src="../dist/renderer/menu.js" defer></script>
 </body>
 </html>

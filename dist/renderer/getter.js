@@ -1,0 +1,12 @@
+"use strict";
+const main = document.querySelector("main");
+const nameLabel = document.getElementById("company-name-display");
+const coalLabel = document.getElementById("coal-display");
+const coalHealthBar = document.querySelector("progress");
+const zombek = document.getElementById("zombek");
+const settingsDialog = document.querySelector("dialog#settings-dialog");
+const saveSettingsButton = settingsDialog.querySelector("button#save-settings");
+const closeSettingsButton = settingsDialog.querySelector("button#close-settings");
+const exitGameButton = settingsDialog.querySelector("button#exit-game");
+const menu = document.querySelector("nav#menu");
+const shopButton = menu.querySelector("li#shop-button");
