@@ -7,7 +7,7 @@ function coalClick() :void
     }
     else
     {
-        coalHealth -= 1;
+        coalHealth -= currentTool.miningPower
     }
     updateLabels()
 }
@@ -17,4 +17,7 @@ function updateLabels() :void
     nameLabel.innerHTML = companyName;
     coalLabel.innerHTML = coal.toString()
     coalHealthBar.value = coalHealth;
+    currentTool.updateCursor()
 }
+
+coalButton.addEventListener("click", coalClick)

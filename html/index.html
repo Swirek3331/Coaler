@@ -20,7 +20,7 @@
     <div class="other-options">
         <img alt="gear-icon" src="../assets/sprites/ui/zombek.png" id="zombek"/>
         <br/>
-        <img alt="autorzy" src="" onclick=""/>
+        <img alt="autorzy" src="../assets/sprites/ui/copyright.png" id="copyright"/>
     </div>
 
     <dialog id="settings-dialog" class="settings">
@@ -39,11 +39,16 @@
         <button id="exit-game">Wyjdź z gry</button>
     </dialog>
 
+    <dialog id="author-dialog" class="settings">
+        <h2>Autorzy</h2>
+
+    </dialog>
+
     <aside>
         <header>
             <h1 id="company-name-display">Trzyszcze Inc.</h1>
 
-            <img alt="picture-of-coal" src="../assets/sprites/ui/better-coal-scalled.png" onclick="coalClick()"/>
+            <img alt="picture-of-coal" src="../assets/sprites/ui/better-coal-scalled.png" id="coal-button"/>
             <progress id="mining-progress-bar" max="10"></progress>
         </header>
 
@@ -54,7 +59,7 @@
                 <li>
                     Produkcja
                 </li>
-                <li id="shop-button">
+                <li>
                     Sklep
                 </li>
                 <li>
@@ -77,6 +82,7 @@
     </main>
 
     <script src="../dist/renderer/getter.js" defer></script>
+    <script src="../dist/renderer/world/Tool.js" defer></script>
     <script src="../dist/renderer/player.js" defer></script>
     <script src="../dist/renderer/ui.js" defer></script>
     <script src="../dist/renderer/start.js" defer></script>

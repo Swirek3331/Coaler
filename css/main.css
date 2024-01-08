@@ -5,6 +5,8 @@
 
     margin: 0;
     padding: 0;
+
+    user-select: none; /* Standard syntax */
 }
 
 body {
@@ -50,9 +52,7 @@ aside {
         transform: scale(1.1);
     }
 
-    & img {
-        cursor: url(../assets/sprites/over/production/Ręka.png), pointer;
-    }
+
 
     & progress {
         -webkit-appearance: none;
@@ -81,8 +81,8 @@ main {
     }
 
     & div {
-        background-color: grey;
         background-repeat: no-repeat;
+        background-position: 0 center;
 
         margin-top: 2.5rem;
 

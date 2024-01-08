@@ -13,3 +13,6 @@ closeSettingsButton.addEventListener("click", () => {
     settingsDialog.close();
 });
 exitGameButton.addEventListener("click", () => window.close());
+copyright.addEventListener("click", () => {
+    authorDialog.showModal();
+});

@@ -1,8 +1,15 @@
 "use strict";
 //tymaczasowe
+const div = main.querySelector("div");
+let productionOpen = false;
 let shopOpen = false;
+let emissionOpen = false;
+let coalsOpen = false;
+productionButton.addEventListener("click", () => {
+    div.style.backgroundImage = "none";
+    shopOpen = false;
+});
 shopButton.addEventListener("click", () => {
-    const div = main.querySelector("div");
     if (!shopOpen) {
         div.style.backgroundImage = "url(../assets/sprites/ui/sklep-full-scalled.png)";
         shopOpen = true;
@@ -11,4 +18,12 @@ shopButton.addEventListener("click", () => {
         div.style.backgroundImage = "none";
         shopOpen = false;
     }
+});
+emissionButton.addEventListener("click", () => {
+    div.style.backgroundImage = "none";
+    shopOpen = false;
+});
+coalsButton.addEventListener("click", () => {
+    div.style.backgroundImage = "none";
+    shopOpen = false;
 });
