@@ -1,6 +1,6 @@
 "use strict";
 zombek.addEventListener("click", () => {
-    settingsDialog.show();
+    settingsDialog.showModal();
     const nameInput = document.getElementById("name-input");
     nameInput.placeholder = companyName;
 });

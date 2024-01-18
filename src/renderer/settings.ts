@@ -1,5 +1,5 @@
 zombek.addEventListener("click", () => {
-    settingsDialog.show()
+    settingsDialog.showModal()
 
     const nameInput = document.getElementById("name-input") as HTMLInputElement
     nameInput.placeholder = companyName

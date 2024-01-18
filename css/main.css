@@ -88,6 +88,15 @@ main {
 
         height: 100%;
     }
+
+    & nav {
+        background-color: grey;
+
+        & ul {
+            text-align: center;
+            list-style-type: none;
+        }
+    }
 }
 
 aside, main {
