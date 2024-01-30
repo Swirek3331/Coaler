@@ -1,18 +1,19 @@
 "use strict";
 function coalClick() {
-    if (coalHealth == 0) {
-        coal += coalAmount;
-        coalHealth = coalHealthBar.max;
+    if (currentCoal.health == 0) {
+        currentCoal.amount += coalAmount;
+        currentCoal.health = coalHealthBar.max;
     }
     else {
-        coalHealth -= currentTool.miningPower;
+        currentCoal.health -= currentTool.miningPower;
     }
     updateLabels();
 }
 function updateLabels() {
+    coalButton.src = `../${currentCoal.scalledPath}`;
     nameLabel.innerHTML = companyName;
-    coalLabel.innerHTML = coal.toString();
-    coalHealthBar.value = coalHealth;
+    currentCoal.amountLabel.innerHTML = currentCoal.amount.toString();
+    coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor();
 }
 coalButton.addEventListener("click", coalClick);

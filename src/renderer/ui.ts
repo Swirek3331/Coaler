@@ -1,22 +1,23 @@
 function coalClick() :void
 {
-    if (coalHealth == 0)
+    if (currentCoal.health == 0)
     {
-        coal += coalAmount
-        coalHealth = coalHealthBar.max
+        currentCoal.amount += coalAmount;
+        currentCoal.health = coalHealthBar.max
     }
     else
     {
-        coalHealth -= currentTool.miningPower
+        currentCoal.health -= currentTool.miningPower
     }
     updateLabels()
 }
 
 function updateLabels() :void
 {
+    coalButton.src = `../${currentCoal.scalledPath}`;
     nameLabel.innerHTML = companyName;
-    coalLabel.innerHTML = coal.toString()
-    coalHealthBar.value = coalHealth;
+    currentCoal.amountLabel.innerHTML = currentCoal.amount.toString()
+    coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor()
 }
 

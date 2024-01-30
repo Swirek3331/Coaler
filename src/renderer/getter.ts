@@ -22,3 +22,5 @@ const productionButton = menuButtons[0];
 const shopButton = menuButtons[1];
 const emissionButton = menuButtons[2];
 const coalsButton = menuButtons[3];
+
+const coalList = document.querySelector("ul#coal-list") as HTMLUListElement
