@@ -52,8 +52,6 @@ aside {
         transform: scale(1.1);
     }
 
-
-
     & progress {
         -webkit-appearance: none;
         appearance: none;

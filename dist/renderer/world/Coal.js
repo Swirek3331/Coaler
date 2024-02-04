@@ -16,10 +16,29 @@ class Coal {
         this.unlocked = unlocked;
         Coal.coals.push(this);
         let li = document.createElement("li");
-        //TODO: divy
-        coalList.appendChild(li);
-        li.innerHTML = `<img src="../${this.smallerPath}" alt="${name}"/> <span id="${name}-label">${this.amount}</span>`;
-        this.amountLabel = document.getElementById(name + "-label");
+        if (Coal.coals.length == 1 || Coal.coals.length % 4 == 1) {
+            let div = document.createElement("div");
+            coalList.appendChild(div);
+            div.appendChild(li);
+        }
+        else {
+            let div = coalList.lastElementChild;
+            div.appendChild(li);
+        }
+        let img = document.createElement("img");
+        li.appendChild(img);
+        img.alt = name;
+        if (this.unlocked) {
+            img.src = "../" + this.smallerPath;
+        }
+        else {
+            img.src = "../assets/sprites/ui/lock.png";
+        }
+        let span = document.createElement("span");
+        li.appendChild(span);
+        span.id = `${name}-label`;
+        span.innerHTML = this.amount.toString();
+        this.amountLabel = span;
     }
     static nextCoal(current) {
         if (typeof current == "number") {
@@ -44,3 +63,7 @@ class Coal {
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", 10, 1, true);
+Coal.aircoal = new Coal("aircoal", 20, 2, false);
+Coal.stonecoal = new Coal("stonecoal", 30, 3, false);
+Coal.ironcoal = new Coal("ironcoal", 40, 4, false);
+Coal.goldcoal = new Coal("goldcoal", 50, 5, false);

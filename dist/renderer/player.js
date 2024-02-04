@@ -1,6 +1,5 @@
 "use strict";
-let coal = 0;
-let coalAmount = 1;
+let coalAmount = 10;
 let companyName = "Coal Inc.";
-let currentTool = Tool.hand;
+let currentTool = Tool.pickaxe;
 let currentCoal = Coal.coal;
