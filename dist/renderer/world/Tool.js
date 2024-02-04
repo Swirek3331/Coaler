@@ -4,7 +4,7 @@ class Tool {
     constructor(name) {
         this.miningPower = 1;
         this.name = name;
-        this.spritePath = `assets/sprites/ui/tools/${name}.png`;
+        this.spritePath = `assets/sprites/tools/${name}.png`;
     }
     static add(n, miningPower) {
         let tool = new _a(n);

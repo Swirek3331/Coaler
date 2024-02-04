@@ -1,5 +1,7 @@
 class Tool
 {
+    public static tools: Tool[] = new Array<Tool>();
+
     public name: string;
     public spritePath: string;
     public miningPower: number = 1;
@@ -7,7 +9,7 @@ class Tool
     constructor(name: string)
     {
         this.name = name;
-        this.spritePath = `assets/sprites/ui/tools/${name}.png`;
+        this.spritePath = `assets/sprites/tools/${name}.png`;
         
     }
 
@@ -15,6 +17,8 @@ class Tool
     {
         let tool = new Tool(n);
         tool.miningPower = miningPower;
+
+        Tool.tools.push(tool);
 
         return tool;
     }
@@ -24,6 +28,6 @@ class Tool
         coalButton.style.cursor = `url(../${this.spritePath}), auto`;
     }
 
-    public static hand: Tool = this.add("hand", 1);
-    public static pickaxe: Tool = this.add("pickaxe", 5);
+    public static hand: Tool = Tool.add("hand", 1);
+    public static pickaxe: Tool = Tool.add("pickaxe", 5);
 }

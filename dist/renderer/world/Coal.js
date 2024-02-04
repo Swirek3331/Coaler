@@ -63,7 +63,3 @@ class Coal {
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", 10, 1, true);
-Coal.aircoal = new Coal("aircoal", 20, 2, false);
-Coal.stonecoal = new Coal("stonecoal", 30, 3, false);
-Coal.ironcoal = new Coal("ironcoal", 40, 4, false);
-Coal.goldcoal = new Coal("goldcoal", 50, 5, false);

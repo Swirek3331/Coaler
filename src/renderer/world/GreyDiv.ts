@@ -1,3 +1,7 @@
 interface GreyDiv {
-    path: string;
+    path: string
+    oppened: boolean
+
+    show() :void
 }
+
