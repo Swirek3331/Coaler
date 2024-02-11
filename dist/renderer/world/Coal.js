@@ -63,3 +63,4 @@ class Coal {
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", 10, 1, true);
+Coal.spaceCoal = new Coal("space-coal", 50, 10, true);

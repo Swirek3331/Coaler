@@ -1,6 +1,6 @@
 class Coal 
 {
-    public static coals: Coal[] = new Array();
+    public static coals: Coal[] = new Array<Coal>();
 
     readonly path: string;
     readonly scalledPath: string;
@@ -94,4 +94,5 @@ class Coal
     }
 
     public static coal = new Coal("better-coal", 10, 1, true)
+    public static spaceCoal = new Coal("space-coal", 50, 10, true)
 }
