@@ -1,20 +1,16 @@
 "use strict";
 class Tool {
-    constructor(name) {
+    constructor(name, power) {
         this.miningPower = 1;
         this.name = name;
+        this.miningPower = power;
         this.spritePath = `assets/sprites/tools/${name}.png`;
-    }
-    static add(n, miningPower) {
-        let tool = new Tool(n);
-        tool.miningPower = miningPower;
-        Tool.tools.push(tool);
-        return tool;
+        Tool.tools.push(this);
     }
     updateCursor() {
         coalButton.style.cursor = `url(../${this.spritePath}), auto`;
     }
 }
 Tool.tools = new Array();
-Tool.hand = Tool.add("hand", 1);
-Tool.pickaxe = Tool.add("pickaxe", 5);
+Tool.hand = new Tool("hand", 1);
+Tool.pickaxe = new Tool("pickaxe", 5);

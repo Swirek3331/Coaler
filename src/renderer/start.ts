@@ -1,3 +1,3 @@
-coalHealthBar.max = currentCoal.hardness;
+coalHealthBar.max = currentCoal.hardnes;
 
 updateLabels()

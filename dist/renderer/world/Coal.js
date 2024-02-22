@@ -1,18 +1,17 @@
 "use strict";
 class Coal {
-    //Muszę wszystko do konstruktora wpierdolić
-    //tu nie ma obiektowości takiej jak zwykle aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    constructor(name, hardnes, price, unlocked) {
-        this.hardness = 10;
+    constructor(name, unlocked) {
+        this.baseHardness = 10;
         this.price = 1;
         this.amount = 0;
         this.unlocked = false;
         this.path = `assets/sprites/coals/normal/${name}.png`;
         this.scalledPath = `assets/sprites/coals/scalled/${name}.png`;
         this.smallerPath = `assets/sprites/coals/smaller/${name}.png`;
-        this.hardness = hardnes;
-        this.health = hardnes;
-        this.price = price;
+        this.baseHardness = sigma(5 + Coal.coals.length);
+        this.hardnes = this.baseHardness;
+        this.health = this.hardnes;
+        this.price = linearGrowth(Coal.coals.length);
         this.unlocked = unlocked;
         Coal.coals.push(this);
         let li = document.createElement("li");
@@ -41,18 +40,7 @@ class Coal {
         this.amountLabel = span;
     }
     static nextCoal(current) {
-        if (typeof current == "number") {
-            if (current >= Coal.coals.length - 1)
-                return Coal.coals[0];
-            else
-                return Coal.coals[current + 1];
-        }
-        else {
-            if (current == Coal.coals[Coal.coals.length - 1])
-                return Coal.coals[0];
-            else
-                return Coal.coals[Coal.coals.indexOf(current) + 1];
-        }
+        return next(Coal.coals, current);
     }
     unlock() {
         if (this.unlocked) {
@@ -62,5 +50,5 @@ class Coal {
     }
 }
 Coal.coals = new Array();
-Coal.coal = new Coal("better-coal", 10, 1, true);
-Coal.spaceCoal = new Coal("space-coal", 50, 10, true);
+Coal.coal = new Coal("better-coal", true);
+Coal.coal2 = new Coal("space-coal", true);
