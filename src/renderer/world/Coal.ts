@@ -22,7 +22,7 @@ class Coal
         this.scalledPath = `assets/sprites/coals/scalled/${name}.png`;
         this.smallerPath = `assets/sprites/coals/smaller/${name}.png`;
 
-        this.baseHardness = sigma(5+Coal.coals.length);
+        this.baseHardness = quadtraticGrowth(4 + Coal.coals.length);
         this.hardnes = this.baseHardness
         this.health = this.hardnes
         this.price = linearGrowth(Coal.coals.length)
@@ -63,7 +63,7 @@ class Coal
         span.innerHTML = this.amount.toString();
         this.amountLabel = span;
     }
-
+    
     public static nextCoal(current: Coal | number): Coal
     {
         return next<Coal>(Coal.coals, current);
@@ -80,16 +80,16 @@ class Coal
     }
 
     public static coal = new Coal("better-coal", true)
-    public static blackRock = new Coal("black-rock", false)
-    public static lignite = new Coal("lignite", false)
-    public static charcoal = new Coal("charcoal", false)
-    public static coalRock = new Coal("coal-rock", false)
-    public static anhracite = new Coal("anhracite", false)
-    public static coalCoke = new Coal("coal-coke", false)
-    public static oilCoke = new Coal("oil-coke", false)
-    public static airCoal = new Coal("air-coal", false)
-    public static spaceCoal = new Coal("space-coal", false) //On jest dobry
-    public static voidCoal = new Coal("void-coal", false)
-    public static darkMatter = new Coal("dark-matter", false)
-    public static nigger = new Coal("nigger", false)
+    public static blackRock = new Coal("black-rock", true)
+    public static lignite = new Coal("lignite", true)
+    public static charcoal = new Coal("charcoal", true)
+    public static rockCoal = new Coal("rock-coal", true)
+    public static anthracite = new Coal("anthracite", true)
+    public static coalCoke = new Coal("coal-coke", true)
+    public static oilCoke = new Coal("oil-coke", true)
+    public static airCoal = new Coal("aircoal", true)
+    public static spaceCoal = new Coal("space-coal", true) //On jest dobry
+    public static voidCoal = new Coal("void-coal", true)
+    public static darkMatterCoal = new Coal("dark-matter-coal", true)
+    public static nigger = new Coal("nigger", true)
 }

@@ -3,9 +3,15 @@ function coalClick() {
     if (currentCoal.health == 0) {
         currentCoal.amount += coalAmount;
         currentCoal.health = coalHealthBar.max;
+        currentCoal = Coal.nextCoal(currentCoal);
     }
     else {
-        currentCoal.health -= currentTool.miningPower;
+        if (currentCoal.health - currentTool.miningPower < 0) {
+            currentCoal.health = 0;
+        }
+        else {
+            currentCoal.health -= currentTool.miningPower;
+        }
     }
     updateLabels();
 }

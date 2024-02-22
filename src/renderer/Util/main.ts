@@ -21,10 +21,10 @@ function linearGrowth(x: number)
     return 3 * x + 1;
 }
 
-function sigma(amount: number)
+function sigma(n: number)
 {
     let sum = 0;
-    for (let i = 0; i < amount; i++)
+    for (let i = 1; i <= n; i++)
     {
         sum += i;
     }

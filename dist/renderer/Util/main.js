@@ -16,9 +16,9 @@ function next(arr, current) {
 function linearGrowth(x) {
     return 3 * x + 1;
 }
-function sigma(amount) {
+function sigma(n) {
     let sum = 0;
-    for (let i = 0; i < amount; i++) {
+    for (let i = 1; i <= n; i++) {
         sum += i;
     }
     return sum;
