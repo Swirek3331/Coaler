@@ -80,6 +80,16 @@ class Coal
     }
 
     public static coal = new Coal("better-coal", true)
-    public static coal2 = new Coal("space-coal", true)
-
+    public static blackRock = new Coal("black-rock", false)
+    public static lignite = new Coal("lignite", false)
+    public static charcoal = new Coal("charcoal", false)
+    public static coalRock = new Coal("coal-rock", false)
+    public static anhracite = new Coal("anhracite", false)
+    public static coalCoke = new Coal("coal-coke", false)
+    public static oilCoke = new Coal("oil-coke", false)
+    public static airCoal = new Coal("air-coal", false)
+    public static spaceCoal = new Coal("space-coal", false) //On jest dobry
+    public static voidCoal = new Coal("void-coal", false)
+    public static darkMatter = new Coal("dark-matter", false)
+    public static nigger = new Coal("nigger", false)
 }

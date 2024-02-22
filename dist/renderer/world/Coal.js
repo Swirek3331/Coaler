@@ -51,4 +51,15 @@ class Coal {
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", true);
-Coal.coal2 = new Coal("space-coal", true);
+Coal.blackRock = new Coal("black-rock", false);
+Coal.lignite = new Coal("lignite", false);
+Coal.charcoal = new Coal("charcoal", false);
+Coal.coalRock = new Coal("coal-rock", false);
+Coal.anhracite = new Coal("anhracite", false);
+Coal.coalCoke = new Coal("coal-coke", false);
+Coal.oilCoke = new Coal("oil-coke", false);
+Coal.airCoal = new Coal("air-coal", false);
+Coal.spaceCoal = new Coal("space-coal", false); //On jest dobry
+Coal.voidCoal = new Coal("void-coal", false);
+Coal.darkMatter = new Coal("dark-matter", false);
+Coal.nigger = new Coal("nigger", false);
