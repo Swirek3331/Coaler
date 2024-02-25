@@ -8,7 +8,7 @@ class Coal {
         this.path = `assets/sprites/coals/normal/${name}.png`;
         this.scalledPath = `assets/sprites/coals/scalled/${name}.png`;
         this.smallerPath = `assets/sprites/coals/smaller/${name}.png`;
-        this.baseHardness = sigma(4 + Coal.coals.length);
+        this.baseHardness = quadtraticGrowth(4 + Coal.coals.length);
         this.hardnes = this.baseHardness;
         this.health = this.hardnes;
         this.price = linearGrowth(Coal.coals.length);

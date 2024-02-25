@@ -17,6 +17,7 @@ function coalClick() :void
             currentCoal.health -= currentTool.miningPower
         }
     }
+    
     updateLabels()
 }
 
@@ -24,9 +25,13 @@ function updateLabels() :void
 {
     coalButton.src = `../${currentCoal.scalledPath}`;
     nameLabel.innerHTML = companyName;
-    currentCoal.amountLabel.innerHTML = currentCoal.amount.toString()
     coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor()
+
+    for (let coal of Coal.coals)
+    {
+        coal.amountLabel.innerHTML = coal.amount.toString();
+    }
 }
 
 coalButton.addEventListener("click", coalClick)
