@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "npm run build && electron ."
+    "start": "npm run build && electron .",
+    "package": "npm run build && electron-builder"
   },
   "keywords": [],
   "author": "Krzysztof Siwy <karolsutkowski21@gmail.com>",
@@ -15,5 +16,18 @@
     "electron": "^29.0.1",
     "electron-builder": "^24.12.0",
     "typescript": "^5.3.3"
+  },
+  "build": {
+    "appId": "com.kkko.coaler",
+    "productName": "Coaler",
+    "icon": "./assets/ui/icon.png",
+    "directories": {
+      "output": "./build"
+    },
+    "files": [
+      "./dist/**/*",
+      "./node_modules/**/*",
+      "./assets/**/**/*"
+    ]
   }
 }
