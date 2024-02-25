@@ -11,6 +11,9 @@
   },
   "keywords": [],
   "author": "Krzysztof Siwy <karolsutkowski21@gmail.com>",
+  "contributors": [
+    "Krzysztof Siwy <karolsutkowski21@gmail.com>"
+  ],
   "license": "ISC",
   "devDependencies": {
     "electron": "^29.0.1",
@@ -19,15 +22,22 @@
   },
   "build": {
     "appId": "com.kkko.coaler",
-    "productName": "Coaler",
-    "icon": "./assets/ui/icon.png",
+    "productName": "Coaler", 
+    "icon": "./assets/sprites/ui/icon.png",
     "directories": {
       "output": "./build"
     },
     "files": [
-      "./dist/**/*",
-      "./node_modules/**/*",
-      "./assets/**/**/*"
-    ]
+      "dist/**/**/*",
+      "node_modules/**/*",
+      "assets/**/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "zip",
+        "portable"
+      ]
+    }
   }
 }
