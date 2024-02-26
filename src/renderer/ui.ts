@@ -27,6 +27,7 @@ function updateLabels() :void
     nameLabel.innerHTML = companyName;
     coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor()
+    coalHealthBar.max = currentCoal.hardnes;
 
     for (let coal of Coal.coals)
     {

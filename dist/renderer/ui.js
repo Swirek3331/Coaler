@@ -20,6 +20,7 @@ function updateLabels() {
     nameLabel.innerHTML = companyName;
     coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor();
+    coalHealthBar.max = currentCoal.hardnes;
     for (let coal of Coal.coals) {
         coal.amountLabel.innerHTML = coal.amount.toString();
     }

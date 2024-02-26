@@ -15,6 +15,9 @@
     "Krzysztof Siwy <karolsutkowski21@gmail.com>"
   ],
   "license": "ISC",
+  "dependencies": {
+    "electron-log": "5.1.1"
+  },
   "devDependencies": {
     "electron": "^29.0.1",
     "electron-builder": "^24.12.0",
@@ -22,15 +25,17 @@
   },
   "build": {
     "appId": "com.kkko.coaler",
-    "productName": "Coaler", 
+    "productName": "Coaler",
     "icon": "./assets/sprites/ui/icon.png",
+    "asar": true,
     "directories": {
       "output": "./build"
     },
     "files": [
-      "dist/**/**/*",
-      "node_modules/**/*",
-      "assets/**/**/*",
+      "dist/**/*",
+      "assets/**/*",
+      "css/**/*",
+      "html/**/*",
       "package.json"
     ],
     "win": {
