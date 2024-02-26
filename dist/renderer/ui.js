@@ -1,18 +1,22 @@
 "use strict";
 function coalClick() {
     if (currentCoal.health == 0) {
-        currentCoal.amount += coalAmount;
-        currentCoal.health = coalHealthBar.max;
-        currentCoal = Coal.nextCoal(currentCoal);
+        coalFinish();
     }
     else {
         if (currentCoal.health - currentTool.miningPower < 0) {
-            currentCoal.health = 0;
+            coalFinish();
         }
         else {
             currentCoal.health -= currentTool.miningPower;
         }
     }
+    updateLabels();
+}
+function coalFinish() {
+    currentCoal.amount += coalAmount;
+    currentCoal.health = coalHealthBar.max;
+    currentCoal = Coal.nextCoal(currentCoal);
     updateLabels();
 }
 function updateLabels() {

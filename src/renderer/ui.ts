@@ -2,15 +2,13 @@ function coalClick() :void
 {
     if (currentCoal.health == 0)
     {
-        currentCoal.amount += coalAmount;
-        currentCoal.health = coalHealthBar.max
-        currentCoal = Coal.nextCoal(currentCoal)
+        coalFinish()
     }
     else
     {
         if (currentCoal.health - currentTool.miningPower < 0)
         {
-            currentCoal.health = 0
+            coalFinish()
         }
         else
         {
@@ -18,6 +16,15 @@ function coalClick() :void
         }
     }
     
+    updateLabels()
+}
+
+function coalFinish() :void
+{
+    currentCoal.amount += coalAmount;
+    currentCoal.health = coalHealthBar.max
+    currentCoal = Coal.nextCoal(currentCoal)
+
     updateLabels()
 }
 

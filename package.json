@@ -1,6 +1,6 @@
 {
   "name": "coaler",
-  "version": "1.0.0",
+  "version": "26.02.2023",
   "description": "Coal Clicker",
   "main": "./dist/index.js",
   "scripts": {
@@ -10,14 +10,14 @@
     "package": "npm run build && electron-builder"
   },
   "keywords": [],
-  "author": "Krzysztof Siwy <karolsutkowski21@gmail.com>",
+  "author": "Karol Sutkowski <karolsutkowski21@gmail.com>",
   "contributors": [
-    "Krzysztof Siwy <karolsutkowski21@gmail.com>"
+    "Krzysztof Siwy <karolsutkowski21@gmail.com>",
+    "Mariusz Kopytko <mariuszkopytko1004@gmail.com>",
+    "Oskar Povkstela(Damian Czekolada) <povkstelao@gmail.com>",
+    "Czarny \"Blaq\""
   ],
   "license": "ISC",
-  "dependencies": {
-    "electron-log": "5.1.1"
-  },
   "devDependencies": {
     "electron": "^29.0.1",
     "electron-builder": "^24.12.0",
