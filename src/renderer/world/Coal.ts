@@ -104,7 +104,11 @@ class Coal
     {
         this.amount += 1
         this.health = this.hardnes
-        currentCoal = Coal.nextCoal(currentCoal)//Tymczasowe
+
+        if (coalShow)
+        {
+            currentCoal = Coal.nextCoal(currentCoal)
+        }
 
         Coal.updateLabels()
     }
@@ -118,16 +122,16 @@ class Coal
     }
 
     public static coal = new Coal("better-coal", true)
-    public static blackRock = new Coal("black-rock", true)
-    public static lignite = new Coal("lignite", true)
-    public static charcoal = new Coal("charcoal", true)
-    public static rockCoal = new Coal("rock-coal", true)
-    public static anthracite = new Coal("anthracite", true)
-    public static coalCoke = new Coal("coal-coke", true)
-    public static oilCoke = new Coal("oil-coke", true)
-    public static airCoal = new Coal("aircoal", true)
-    public static spaceCoal = new Coal("space-coal", true) //On jest dobry
-    public static voidCoal = new Coal("void-coal", true)
-    public static darkMatterCoal = new Coal("dark-matter-coal", true)
-    public static nigger = new Coal("nigger", true)
+    public static blackRock = new Coal("black-rock", false)
+    public static lignite = new Coal("lignite", false)
+    public static charcoal = new Coal("charcoal", false)
+    public static rockCoal = new Coal("rock-coal", false)
+    public static anthracite = new Coal("anthracite", false)
+    public static coalCoke = new Coal("coal-coke", false)
+    public static oilCoke = new Coal("oil-coke", false)
+    public static airCoal = new Coal("aircoal", false)
+    public static spaceCoal = new Coal("space-coal", false) //On jest dobry
+    public static voidCoal = new Coal("void-coal", false)
+    public static darkMatterCoal = new Coal("dark-matter-coal", false)
+    public static nigger = new Coal("nigger", false)
 }

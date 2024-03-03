@@ -2,7 +2,9 @@
 function coalFinish() {
     currentCoal.amount += coalAmount;
     currentCoal.health = coalHealthBar.max;
-    currentCoal = Coal.nextCoal(currentCoal);
+    if (coalShow) {
+        currentCoal = Coal.nextCoal(currentCoal);
+    }
     updateLabels();
 }
 function updateLabels() {

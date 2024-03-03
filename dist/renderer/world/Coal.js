@@ -65,7 +65,9 @@ class Coal {
     finish() {
         this.amount += 1;
         this.health = this.hardnes;
-        currentCoal = Coal.nextCoal(currentCoal); //Tymczasowe
+        if (coalShow) {
+            currentCoal = Coal.nextCoal(currentCoal);
+        }
         Coal.updateLabels();
     }
     static updateLabels() {
@@ -76,15 +78,15 @@ class Coal {
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", true);
-Coal.blackRock = new Coal("black-rock", true);
-Coal.lignite = new Coal("lignite", true);
-Coal.charcoal = new Coal("charcoal", true);
-Coal.rockCoal = new Coal("rock-coal", true);
-Coal.anthracite = new Coal("anthracite", true);
-Coal.coalCoke = new Coal("coal-coke", true);
-Coal.oilCoke = new Coal("oil-coke", true);
-Coal.airCoal = new Coal("aircoal", true);
-Coal.spaceCoal = new Coal("space-coal", true); //On jest dobry
-Coal.voidCoal = new Coal("void-coal", true);
-Coal.darkMatterCoal = new Coal("dark-matter-coal", true);
-Coal.nigger = new Coal("nigger", true);
+Coal.blackRock = new Coal("black-rock", false);
+Coal.lignite = new Coal("lignite", false);
+Coal.charcoal = new Coal("charcoal", false);
+Coal.rockCoal = new Coal("rock-coal", false);
+Coal.anthracite = new Coal("anthracite", false);
+Coal.coalCoke = new Coal("coal-coke", false);
+Coal.oilCoke = new Coal("oil-coke", false);
+Coal.airCoal = new Coal("aircoal", false);
+Coal.spaceCoal = new Coal("space-coal", false); //On jest dobry
+Coal.voidCoal = new Coal("void-coal", false);
+Coal.darkMatterCoal = new Coal("dark-matter-coal", false);
+Coal.nigger = new Coal("nigger", false);
