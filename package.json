@@ -14,7 +14,7 @@
   "contributors": [
     "Karol Sutkowski <karolsutkowski21@gmail.com>",
     "Mariusz Kopytko <mariuszkopytko1004@gmail.com>",
-    "Oskar Povkstela(Damian Czekolada) <povkstelao@gmail.com>",
+    "Oskar Povkstela (Damian Czekolada) <povkstelao@gmail.com>",
     "Czarny \"Blaq\""
   ],
   "license": "ISC",
@@ -27,7 +27,6 @@
     "appId": "com.kkko.coaler",
     "productName": "Coaler",
     "icon": "./assets/sprites/ui/icon.png",
-    "publisherName": "KKKO",
     "asar": true,
     "directories": {
       "output": "./build"
