@@ -12,8 +12,7 @@ class Tool
         this.miningPower = power;
         this.spritePath = `assets/sprites/tools/${name}.png`;
 
-        Tool.tools.push(this);
-        
+        Tool.tools.push(this)
     }
 
     public updateCursor() :void

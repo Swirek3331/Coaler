@@ -1,24 +1,3 @@
-function coalClick() :void
-{
-    if (currentCoal.health == 0)
-    {
-        coalFinish()
-    }
-    else
-    {
-        if (currentCoal.health - currentTool.miningPower < 0)
-        {
-            coalFinish()
-        }
-        else
-        {
-            currentCoal.health -= currentTool.miningPower
-        }
-    }
-    
-    updateLabels()
-}
-
 function coalFinish() :void
 {
     currentCoal.amount += coalAmount;
@@ -36,10 +15,7 @@ function updateLabels() :void
     currentTool.updateCursor()
     coalHealthBar.max = currentCoal.hardnes;
 
-    for (let coal of Coal.coals)
-    {
-        coal.amountLabel.innerHTML = coal.amount.toString();
-    }
+    Coal.updateLabels()
 }
 
-coalButton.addEventListener("click", coalClick)
+coalButton.addEventListener("click", currentCoal.click)

@@ -1,18 +1,4 @@
 "use strict";
-function coalClick() {
-    if (currentCoal.health == 0) {
-        coalFinish();
-    }
-    else {
-        if (currentCoal.health - currentTool.miningPower < 0) {
-            coalFinish();
-        }
-        else {
-            currentCoal.health -= currentTool.miningPower;
-        }
-    }
-    updateLabels();
-}
 function coalFinish() {
     currentCoal.amount += coalAmount;
     currentCoal.health = coalHealthBar.max;
@@ -25,8 +11,6 @@ function updateLabels() {
     coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor();
     coalHealthBar.max = currentCoal.hardnes;
-    for (let coal of Coal.coals) {
-        coal.amountLabel.innerHTML = coal.amount.toString();
-    }
+    Coal.updateLabels();
 }
-coalButton.addEventListener("click", coalClick);
+coalButton.addEventListener("click", currentCoal.click);

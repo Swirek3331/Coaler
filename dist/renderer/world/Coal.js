@@ -48,6 +48,31 @@ class Coal {
         }
         this.unlocked = true;
     }
+    click() {
+        if (currentCoal.health == 0) {
+            coalFinish();
+        }
+        else {
+            if (currentCoal.health - currentTool.miningPower < 0) {
+                coalFinish();
+            }
+            else {
+                currentCoal.health -= currentTool.miningPower;
+            }
+        }
+        updateLabels();
+    }
+    finish() {
+        this.amount += 1;
+        this.health = this.hardnes;
+        currentCoal = Coal.nextCoal(currentCoal); //Tymczasowe
+        Coal.updateLabels();
+    }
+    static updateLabels() {
+        for (let coal of Coal.coals) {
+            coal.amountLabel.innerHTML = coal.amount.toString();
+        }
+    }
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", true);

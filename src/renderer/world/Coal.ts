@@ -79,6 +79,44 @@ class Coal
         this.unlocked = true;
     }
 
+    public click() :void
+    {
+        if (currentCoal.health == 0)
+        {
+            coalFinish()
+        }
+        else
+        {
+            if (currentCoal.health - currentTool.miningPower < 0)
+            {
+                coalFinish()
+            }
+            else
+            {
+                currentCoal.health -= currentTool.miningPower
+            }
+        }
+        
+        updateLabels()
+    }
+
+    public finish() :void
+    {
+        this.amount += 1
+        this.health = this.hardnes
+        currentCoal = Coal.nextCoal(currentCoal)//Tymczasowe
+
+        Coal.updateLabels()
+    }
+
+    public static updateLabels() :void
+    {
+        for (let coal of Coal.coals)
+        {
+            coal.amountLabel.innerHTML = coal.amount.toString();
+        }
+    }
+
     public static coal = new Coal("better-coal", true)
     public static blackRock = new Coal("black-rock", true)
     public static lignite = new Coal("lignite", true)
