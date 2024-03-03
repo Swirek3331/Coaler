@@ -1,6 +1,6 @@
 {
   "name": "coaler",
-  "version": "26.02.2023",
+  "version": "3.03.2023",
   "description": "Coal Clicker",
   "main": "./dist/index.js",
   "scripts": {
