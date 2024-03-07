@@ -1,3 +1,8 @@
+function cheatsAlert()
+{
+    console.log("This function requires cheats to be enabled");
+}
+
 function setCoalShow()
 {
     coalShow = !coalShow;
@@ -10,8 +15,21 @@ function setCoalShow()
 
 function unlockAll()
 {
+    if (cheatsEnabled!)
+    {
+        cheatsAlert()
+        return
+    }
+
     for (let coal of Coal.coals)
     {
         coal.unlock();
     }
+
+    updateLabels()
+}
+
+function enableCheats()
+{
+    cheatsEnabled = true;
 }
