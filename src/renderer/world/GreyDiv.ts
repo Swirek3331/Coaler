@@ -11,36 +11,12 @@ class Menu {
         let menuButtons = menu.querySelectorAll("li")!
         this.button = menuButtons[Menu.menus.length]
 
-        this.path = `assets/sprites/menu/${name}.png`;
-        this.scalledPath = `assets/sprites/menu/${name}-scalled.png`;
+        this.path = `../assets/sprites/menus/${name}.png`;
+        this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
 
-        this.button.addEventListener("click", this.open)
+        this.button.addEventListener("click", this.open.bind(this))
         
         Menu.menus.push(this)
-    }
-
-    closeRest()
-    {
-        for (let i = 0; i < Menu.menus.length; i++)
-        {
-            if (Menu.menus.indexOf(this) == i)
-            {
-                break
-            }
-
-            Menu.menus[i].close()
-        }
-    }
-
-    close()
-    {
-        if (!this.opened)
-        {
-            return
-        }
-
-        greyDiv.style.backgroundImage = "none";
-        this.opened = false
     }
 
     open()
@@ -54,6 +30,30 @@ class Menu {
         this.closeRest()
         greyDiv.style.backgroundImage = `url(${this.scalledPath})`;
         this.opened = true
+    }
+
+    close()
+    {
+        if (!this.opened)
+        {
+            return
+        }
+
+        greyDiv.style.backgroundImage = "none";
+        this.opened = false
+    }
+
+    closeRest()
+    {
+        for (let i = 0; i < Menu.menus.length; i++)
+        {
+            if (Menu.menus.indexOf(this) == i)
+            {
+                break
+            }
+
+            Menu.menus[i].close()
+        }
     }
 
     static productionMenu: Menu = new Menu("production")
