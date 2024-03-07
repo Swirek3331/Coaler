@@ -29,6 +29,17 @@ function unlockAll()
     updateLabels()
 }
 
+function unlock(coal: Coal)
+{
+    if (cheatsEnabled!)
+    {
+        cheatsAlert()
+        return
+    }
+
+    coal.unlock();
+}
+
 function enableCheats()
 {
     cheatsEnabled = true;

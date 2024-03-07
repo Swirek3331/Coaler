@@ -94,6 +94,10 @@ main {
         & ul {
             text-align: center;
             list-style-type: none;
+
+            & span {
+                line-height: 1rem;
+            }
         }
     }
 }

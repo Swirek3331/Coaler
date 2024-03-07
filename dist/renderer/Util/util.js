@@ -18,6 +18,13 @@ function unlockAll() {
     }
     updateLabels();
 }
+function unlock(coal) {
+    if (cheatsEnabled) {
+        cheatsAlert();
+        return;
+    }
+    coal.unlock();
+}
 function enableCheats() {
     cheatsEnabled = true;
 }

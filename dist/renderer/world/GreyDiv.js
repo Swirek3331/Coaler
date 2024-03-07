@@ -1,5 +1,6 @@
 "use strict";
 class Menu {
+    //narazie opiera się wszystko na zmianie tła
     constructor(name) {
         this.opened = false;
         let menuButtons = menu.querySelectorAll("li");

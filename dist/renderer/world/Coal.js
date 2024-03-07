@@ -28,7 +28,7 @@ class Coal {
         li.appendChild(img);
         img.alt = name;
         if (this.unlocked) {
-            img.src = "../" + this.smallerPath;
+            img.src = "../" + this.path;
         }
         else {
             img.src = "../assets/sprites/ui/lock.png";

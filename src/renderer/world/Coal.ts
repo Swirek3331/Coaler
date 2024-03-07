@@ -50,7 +50,7 @@ class Coal
 
         if (this.unlocked)
         {
-            img.src = "../" + this.smallerPath;
+            img.src = "../" + this.path;
         }
         else
         {

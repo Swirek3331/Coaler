@@ -5,6 +5,7 @@ class Menu {
     path: string
     scalledPath: string
     opened: boolean = false
+    //narazie opiera się wszystko na zmianie tła
 
     constructor(name: string)
     {
