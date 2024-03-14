@@ -5,6 +5,10 @@ class Menu {
     path: string
     scalledPath: string
     opened: boolean = false
+    shoperContainer: HTMLDivElement = document.createElement("div")
+    controlsContainer: HTMLDivElement = document.createElement("div")
+    controls: HTMLElement[] = new Array<HTMLElement>()
+    
     //narazie opiera się wszystko na zmianie tła
 
     constructor(name: string)
@@ -14,6 +18,12 @@ class Menu {
 
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
+
+        greyDiv.appendChild(this.shoperContainer)
+        greyDiv.appendChild(this.controlsContainer)
+
+        this.shoperContainer.style.visibility = "hidden";
+        this.controlsContainer.style.visibility = "hidden";
 
         this.button.addEventListener("click", this.open.bind(this))
         
@@ -30,18 +40,9 @@ class Menu {
 
         this.closeRest()
         greyDiv.style.backgroundImage = `url(${this.scalledPath})`;
+        this.shoperContainer.style.visibility = "visible";
+        this.controlsContainer.style.visibility = "visible";
         this.opened = true
-    }
-
-    close()
-    {
-        if (!this.opened)
-        {
-            return
-        }
-
-        greyDiv.style.backgroundImage = "none";
-        this.opened = false
     }
 
     closeRest()
@@ -55,6 +56,19 @@ class Menu {
 
             Menu.menus[i].close()
         }
+    }
+
+        close()
+    {
+        if (!this.opened)
+        {
+            return
+        }
+
+        greyDiv.style.backgroundImage = "none";
+        this.shoperContainer.style.visibility = "hidden";
+        this.controlsContainer.style.visibility = "hidden";
+        this.opened = false
     }
 
     static productionMenu: Menu = new Menu("production")

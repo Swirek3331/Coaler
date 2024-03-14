@@ -1,6 +1,6 @@
 {
   "name": "coaler",
-  "version": "3.03.2023",
+  "version": "14.03.2023",
   "description": "Coal Clicker",
   "main": "./dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "package": "npm run build && electron-builder"
   },
   "keywords": [],
-  "author": "Karol Sutkowski <karolsutkowski21@gmail.com>",
+  "author": "KKKO",
   "contributors": [
     "Karol Sutkowski <karolsutkowski21@gmail.com>",
     "Mariusz Kopytko <mariuszkopytko1004@gmail.com>",

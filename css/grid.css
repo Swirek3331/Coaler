@@ -3,7 +3,7 @@ body {
     grid-template-areas: 
     "margin-left aside main margin-right";
 
-    grid-template-columns: 10vw 32vw 48vw 10vw;
+    grid-template-columns: 5vw 32vw 58vw 5vw;
 }
 
 aside {

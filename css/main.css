@@ -81,7 +81,6 @@ main {
 
     & div {
         background-repeat: no-repeat;
-        background-position: 0 center;
 
         margin-top: 2.5rem;
 
@@ -94,10 +93,6 @@ main {
         & ul {
             text-align: center;
             list-style-type: none;
-
-            & span {
-                line-height: 1rem;
-            }
         }
     }
 }

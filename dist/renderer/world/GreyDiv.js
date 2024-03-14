@@ -3,10 +3,17 @@ class Menu {
     //narazie opiera się wszystko na zmianie tła
     constructor(name) {
         this.opened = false;
+        this.shoperContainer = document.createElement("div");
+        this.controlsContainer = document.createElement("div");
+        this.controls = new Array();
         let menuButtons = menu.querySelectorAll("li");
         this.button = menuButtons[Menu.menus.length];
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
+        greyDiv.appendChild(this.shoperContainer);
+        greyDiv.appendChild(this.controlsContainer);
+        this.shoperContainer.style.visibility = "hidden";
+        this.controlsContainer.style.visibility = "hidden";
         this.button.addEventListener("click", this.open.bind(this));
         Menu.menus.push(this);
     }
@@ -17,14 +24,9 @@ class Menu {
         }
         this.closeRest();
         greyDiv.style.backgroundImage = `url(${this.scalledPath})`;
+        this.shoperContainer.style.visibility = "visible";
+        this.controlsContainer.style.visibility = "visible";
         this.opened = true;
-    }
-    close() {
-        if (!this.opened) {
-            return;
-        }
-        greyDiv.style.backgroundImage = "none";
-        this.opened = false;
     }
     closeRest() {
         for (let i = 0; i < Menu.menus.length; i++) {
@@ -33,6 +35,15 @@ class Menu {
             }
             Menu.menus[i].close();
         }
+    }
+    close() {
+        if (!this.opened) {
+            return;
+        }
+        greyDiv.style.backgroundImage = "none";
+        this.shoperContainer.style.visibility = "hidden";
+        this.controlsContainer.style.visibility = "hidden";
+        this.opened = false;
     }
 }
 Menu.menus = new Array();
