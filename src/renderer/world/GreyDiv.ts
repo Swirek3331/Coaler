@@ -30,7 +30,7 @@ class Menu {
         Menu.menus.push(this)
     }
 
-    open()
+    public open()
     {
         if (this.opened)
         {
@@ -45,7 +45,7 @@ class Menu {
         this.opened = true
     }
 
-    closeRest()
+    public closeRest()
     {
         for (let i = 0; i < Menu.menus.length; i++)
         {
@@ -58,7 +58,7 @@ class Menu {
         }
     }
 
-        close()
+    public close()
     {
         if (!this.opened)
         {
