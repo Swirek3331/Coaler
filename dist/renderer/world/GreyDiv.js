@@ -6,8 +6,6 @@ class Menu {
         this.shoperContainer = document.createElement("div");
         this.controlsContainer = document.createElement("div");
         this.controls = new Array();
-        let menuButtons = menu.querySelectorAll("li");
-        this.button = menuButtons[Menu.menus.length];
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
         greyDiv.appendChild(this.shoperContainer);
@@ -16,7 +14,6 @@ class Menu {
         this.shoperContainer.id = `${name}-shoper-container`;
         this.controlsContainer.style.visibility = "hidden";
         this.controlsContainer.id = `${name}-controls-container`;
-        this.button.addEventListener("click", this.open.bind(this));
         Menu.menus.push(this);
     }
     open() {

@@ -11,6 +11,5 @@ const saveSettingsButton = settingsDialog.querySelector("button#save-settings");
 const closeSettingsButton = settingsDialog.querySelector("button#close-settings");
 const exitGameButton = settingsDialog.querySelector("button#exit-game");
 const authorDialog = document.querySelector("dialog#author-dialog");
-const menu = document.querySelector("nav#menu");
 const greyDiv = document.querySelector("div#grey-div");
 const coalList = document.querySelector("ul#coal-list");

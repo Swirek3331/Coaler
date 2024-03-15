@@ -1,7 +1,6 @@
 class Menu {
     public static menus = new Array<Menu>();
 
-    button: HTMLElement
     path: string
     scalledPath: string
     opened: boolean = false
@@ -13,9 +12,6 @@ class Menu {
 
     constructor(name: string)
     {
-        let menuButtons = menu.querySelectorAll("li")!
-        this.button = menuButtons[Menu.menus.length]
-
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
 
@@ -27,8 +23,6 @@ class Menu {
 
         this.controlsContainer.style.visibility = "hidden";
         this.controlsContainer.id = `${name}-controls-container`;
-
-        this.button.addEventListener("click", this.open.bind(this))
         
         Menu.menus.push(this)
     }

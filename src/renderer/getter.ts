@@ -16,7 +16,6 @@ const exitGameButton = settingsDialog.querySelector("button#exit-game") as HTMLB
 
 const authorDialog = document.querySelector("dialog#author-dialog") as HTMLDialogElement as HTMLDialogElement
 
-const menu = document.querySelector("nav#menu") as HTMLElement
 const greyDiv = document.querySelector("div#grey-div") as HTMLElement
 
 const coalList = document.querySelector("ul#coal-list") as HTMLUListElement
