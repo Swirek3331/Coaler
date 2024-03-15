@@ -15,6 +15,9 @@ class Menu {
         document.body.appendChild(this.dialog);
         this.dialog.appendChild(this.shoperContainer);
         this.dialog.appendChild(this.controlsContainer);
+        this.dialog.style.width = "512px";
+        this.dialog.style.height = "128px";
+        this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
         Menu.menus.push(this);
     }
     open() {
@@ -23,7 +26,7 @@ class Menu {
             return;
         }
         this.closeRest();
-        greyDiv.style.backgroundImage = `url(${this.scalledPath})`;
+        this.dialog.showModal();
         this.opened = true;
     }
     closeRest() {
