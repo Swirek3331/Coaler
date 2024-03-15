@@ -1,7 +1,8 @@
 body {
     display: grid;
     grid-template-areas: 
-    "margin-left aside main margin-right";
+    "margin-left aside main ."
+    "margin-left grey-div grey-div .";
 
     grid-template-columns: 5vw 32vw 58vw 5vw;
 }
@@ -16,4 +17,8 @@ div.other-options {
 
 main {
     grid-area: main;
+}
+
+div#grey-div {
+    grid-area: grey-div;
 }

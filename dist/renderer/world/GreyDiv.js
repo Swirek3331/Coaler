@@ -13,7 +13,9 @@ class Menu {
         greyDiv.appendChild(this.shoperContainer);
         greyDiv.appendChild(this.controlsContainer);
         this.shoperContainer.style.visibility = "hidden";
+        this.shoperContainer.id = `${name}-shoper-container`;
         this.controlsContainer.style.visibility = "hidden";
+        this.controlsContainer.id = `${name}-controls-container`;
         this.button.addEventListener("click", this.open.bind(this));
         Menu.menus.push(this);
     }

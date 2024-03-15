@@ -17,8 +17,6 @@ body {
 }
 
 aside {
-
-    height: 100%;
     
     & ul {
         list-style: none;
@@ -73,18 +71,8 @@ aside {
 }
 
 main {
-    height: 100%;
-     
     & h2 {
         text-align: right;
-    }
-
-    & div {
-        background-repeat: no-repeat;
-
-        margin-top: 2.5rem;
-
-        height: 100%;
     }
 
     & nav {
@@ -100,6 +88,12 @@ main {
 aside, main {
     padding: 1rem;
     text-align: center;
+}
+
+div#grey-div {
+    background-repeat: no-repeat;
+
+    height: 50vh;/* Narazie */
 }
 
 div.other-options {
