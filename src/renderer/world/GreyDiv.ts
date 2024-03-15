@@ -4,6 +4,9 @@ class Menu {
     path: string
     scalledPath: string
     opened: boolean = false
+
+    dialog: HTMLDialogElement = document.createElement("dialog")
+    container: HTMLDivElement = document.createElement("div")
     shoperContainer: HTMLDivElement = document.createElement("div")
     controlsContainer: HTMLDivElement = document.createElement("div")
     controls: HTMLElement[] = new Array<HTMLElement>()
@@ -15,14 +18,12 @@ class Menu {
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
 
-        greyDiv.appendChild(this.shoperContainer)
-        greyDiv.appendChild(this.controlsContainer)
+        greyDiv.appendChild(this.container)
+        this.container.addEventListener("click", this.open.bind(this))
 
-        this.shoperContainer.style.visibility = "hidden";
-        this.shoperContainer.id = `${name}-shoper-container`;
-
-        this.controlsContainer.style.visibility = "hidden";
-        this.controlsContainer.id = `${name}-controls-container`;
+        document.body.appendChild(this.dialog)
+        this.dialog.appendChild(this.shoperContainer)
+        this.dialog.appendChild(this.controlsContainer)
         
         Menu.menus.push(this)
     }
@@ -37,8 +38,6 @@ class Menu {
 
         this.closeRest()
         greyDiv.style.backgroundImage = `url(${this.scalledPath})`;
-        this.shoperContainer.style.visibility = "visible";
-        this.controlsContainer.style.visibility = "visible";
         this.opened = true
     }
 
@@ -63,8 +62,6 @@ class Menu {
         }
 
         greyDiv.style.backgroundImage = "none";
-        this.shoperContainer.style.visibility = "hidden";
-        this.controlsContainer.style.visibility = "hidden";
         this.opened = false
     }
 

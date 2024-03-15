@@ -1,3 +1,5 @@
+/* Stylowanie tutaj to dramat */
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -94,6 +96,13 @@ div#grey-div {
     background-repeat: no-repeat;
 
     height: 50vh;/* Narazie */
+
+    justify-content: space-around;
+
+    div {
+        padding: 1rem;
+        background-color: blue;
+    }
 }
 
 div.other-options {
