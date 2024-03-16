@@ -25,7 +25,7 @@ class Menu {
         document.body.appendChild(this.dialog)
         this.dialog.appendChild(this.shoperContainer)
         this.dialog.appendChild(this.controlsContainer)
-        this.dialog.addEventListener("close", this.close.bind(this))//nie wiem czy to jest bezpieczne
+        this.dialog.addEventListener("close", this.close.bind(this))//nie wiem czy to jest bezpieczne/
         this.dialog.style.width = `${Menu.width}px`;
         this.dialog.style.height = `${Menu.height}px`;
         this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
@@ -53,8 +53,6 @@ class Menu {
         this.opened = true
     }
 
-
-    //bezużyteczne już
     public closeRest()
     {
         for (let i = 0; i < Menu.menus.length; i++)

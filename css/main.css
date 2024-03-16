@@ -125,6 +125,7 @@ dialog {
 
 dialog {
     display: none;
+    overflow: hidden;
 }
 
 dialog.settings {
