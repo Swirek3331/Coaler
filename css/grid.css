@@ -5,6 +5,7 @@ body {
     "margin-left grey-div grey-div .";
 
     grid-template-columns: 5vw 32vw 58vw 5vw;
+    grid-template-rows: 60vh 40vh;
 }
 
 aside {

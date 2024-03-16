@@ -1,7 +1,6 @@
 "use strict";
 class Tool {
-    constructor(name, power) {
-        this.miningPower = 1;
+    constructor(name, power = 1) {
         this.name = name;
         this.miningPower = power;
         this.path = `assets/sprites/tools/base/${name}.png`;
@@ -13,5 +12,5 @@ class Tool {
     }
 }
 Tool.tools = new Array();
-Tool.hand = new Tool("hand", 1);
+Tool.hand = new Tool("hand");
 Tool.pickaxe = new Tool("pickaxe", 5);

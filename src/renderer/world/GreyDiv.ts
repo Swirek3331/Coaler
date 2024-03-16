@@ -14,13 +14,18 @@ class Menu {
     controlsContainer: HTMLDivElement = document.createElement("div")
     controls: HTMLElement[] = new Array<HTMLElement>()
 
-    constructor(name: string)
+    constructor(name: string, title: string = name)
     {
         this.path = `../assets/sprites/menus/${name}.png`;
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
 
         greyDiv.appendChild(this.container)
         this.container.addEventListener("click", this.open.bind(this))
+
+        const label = document.createElement("h2")
+        this.container.appendChild(label)
+        label.innerHTML = title
+        
 
         document.body.appendChild(this.dialog)
         this.dialog.appendChild(this.shoperContainer)

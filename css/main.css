@@ -95,13 +95,11 @@ aside, main {
 div#grey-div {
     background-repeat: no-repeat;
 
-    height: 50vh;/* Narazie */
-
     justify-content: space-around;
 
     div {
-        padding: 1rem;
-        background-color: blue;
+        width: 20%;
+        background-color: grey;
     }
 }
 

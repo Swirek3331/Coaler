@@ -1,6 +1,6 @@
 "use strict";
 class Menu {
-    constructor(name) {
+    constructor(name, title = name) {
         this.opened = false;
         this.dialog = document.createElement("dialog");
         this.container = document.createElement("div");
@@ -11,6 +11,9 @@ class Menu {
         this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
         greyDiv.appendChild(this.container);
         this.container.addEventListener("click", this.open.bind(this));
+        const label = document.createElement("h2");
+        this.container.appendChild(label);
+        label.innerHTML = title;
         document.body.appendChild(this.dialog);
         this.dialog.appendChild(this.shoperContainer);
         this.dialog.appendChild(this.controlsContainer);

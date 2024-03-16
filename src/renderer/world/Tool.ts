@@ -5,9 +5,9 @@ class Tool
     public name: string;
     public path: string;
     public scalledPath: string;
-    public miningPower: number = 1;
+    public miningPower: number;
 
-    constructor(name: string,  power: number)
+    constructor(name: string,  power: number = 1)
     {
         this.name = name;
         this.miningPower = power;
@@ -22,6 +22,6 @@ class Tool
         coalButton.style.cursor = `url(../${this.scalledPath}), auto`;
     }
 
-    public static hand: Tool = new Tool("hand", 1);
+    public static hand: Tool = new Tool("hand");
     public static pickaxe: Tool = new Tool("pickaxe", 5);
 }
