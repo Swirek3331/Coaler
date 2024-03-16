@@ -123,6 +123,10 @@ dialog {
     text-align: center;
 }
 
+dialog {
+    display: none;
+}
+
 dialog.settings {
 
     width: 20%;

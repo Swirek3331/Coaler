@@ -12,9 +12,9 @@ class Menu {
         greyDiv.appendChild(this.container);
         this.container.addEventListener("click", this.open.bind(this));
         document.body.appendChild(this.dialog);
-        this.dialog.classList.add("flex");
         this.dialog.appendChild(this.shoperContainer);
         this.dialog.appendChild(this.controlsContainer);
+        this.dialog.addEventListener("close", this.close.bind(this));
         this.dialog.style.width = `${Menu.width}px`;
         this.dialog.style.height = `${Menu.height}px`;
         this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
@@ -31,8 +31,10 @@ class Menu {
         }
         this.closeRest();
         this.dialog.showModal();
+        this.dialog.style.display = "flex";
         this.opened = true;
     }
+    //bezużyteczne już
     closeRest() {
         for (let i = 0; i < Menu.menus.length; i++) {
             if (Menu.menus.indexOf(this) == i) {
@@ -45,7 +47,8 @@ class Menu {
         if (!this.opened) {
             return;
         }
-        greyDiv.style.backgroundImage = "none";
+        this.dialog.close();
+        this.dialog.style.display = "none";
         this.opened = false;
     }
 }
