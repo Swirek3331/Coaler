@@ -1,6 +1,5 @@
 "use strict";
 class Menu {
-    //narazie opiera się wszystko na zmianie tła
     constructor(name) {
         this.opened = false;
         this.dialog = document.createElement("dialog");
@@ -13,11 +12,16 @@ class Menu {
         greyDiv.appendChild(this.container);
         this.container.addEventListener("click", this.open.bind(this));
         document.body.appendChild(this.dialog);
+        this.dialog.classList.add("flex");
         this.dialog.appendChild(this.shoperContainer);
         this.dialog.appendChild(this.controlsContainer);
-        this.dialog.style.width = "1024px";
-        this.dialog.style.height = "512px";
+        this.dialog.style.width = `${Menu.width}px`;
+        this.dialog.style.height = `${Menu.height}px`;
         this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
+        this.shoperContainer.style.width = `${Menu.width / 2}px`;
+        this.shoperContainer.style.height = `${Menu.height}px`;
+        this.controlsContainer.style.width = `${Menu.width / 2}px`;
+        this.controlsContainer.style.height = `${Menu.height}px`;
         Menu.menus.push(this);
     }
     open() {
@@ -46,6 +50,8 @@ class Menu {
     }
 }
 Menu.menus = new Array();
+Menu.width = 1024;
+Menu.height = 512;
 Menu.productionMenu = new Menu("production");
 Menu.shopMenu = new Menu("shop");
 Menu.emissionMenu = new Menu("emission");

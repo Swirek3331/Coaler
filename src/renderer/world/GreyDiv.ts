@@ -1,6 +1,9 @@
 class Menu {
     public static menus = new Array<Menu>();
 
+    private static width: number = 1024;
+    private static height: number = 512;
+
     path: string
     scalledPath: string
     opened: boolean = false
@@ -10,8 +13,6 @@ class Menu {
     shoperContainer: HTMLDivElement = document.createElement("div")
     controlsContainer: HTMLDivElement = document.createElement("div")
     controls: HTMLElement[] = new Array<HTMLElement>()
-    
-    //narazie opiera się wszystko na zmianie tła
 
     constructor(name: string)
     {
@@ -22,11 +23,18 @@ class Menu {
         this.container.addEventListener("click", this.open.bind(this))
 
         document.body.appendChild(this.dialog)
+        this.dialog.classList.add("flex")
         this.dialog.appendChild(this.shoperContainer)
         this.dialog.appendChild(this.controlsContainer)
-        this.dialog.style.width = "1024px";
-        this.dialog.style.height = "512px";
-        this.dialog.style.backgroundImage = `url(${this.scalledPath})`
+        this.dialog.style.width = `${Menu.width}px`;
+        this.dialog.style.height = `${Menu.height}px`;
+        this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
+
+        this.shoperContainer.style.width = `${Menu.width/2}px`;
+        this.shoperContainer.style.height = `${Menu.height}px`;
+
+        this.controlsContainer.style.width = `${Menu.width/2}px`;
+        this.controlsContainer.style.height = `${Menu.height}px`;
         
         Menu.menus.push(this)
     }
