@@ -61,3 +61,17 @@ Menu.productionMenu = new Menu("production");
 Menu.shopMenu = new Menu("shop");
 Menu.emissionMenu = new Menu("emission");
 Menu.coalsMenu = new Menu("coals");
+class ShopItems {
+    constructor(tool) {
+        let title = document.createElement("h3");
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        Menu.shopMenu.controlsContainer.appendChild(div);
+        div.appendChild(title);
+        div.appendChild(img);
+        img.src = tool.path;
+        title.innerHTML = tool.title;
+        this.tool = tool;
+        Menu.shopMenu.controls.push(this);
+    }
+}
