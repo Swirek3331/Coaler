@@ -34,7 +34,6 @@ class Menu {
         this.dialog.style.display = "flex";
         this.opened = true;
     }
-    //bezużyteczne już
     closeRest() {
         for (let i = 0; i < Menu.menus.length; i++) {
             if (Menu.menus.indexOf(this) == i) {

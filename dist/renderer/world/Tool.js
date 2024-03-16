@@ -4,11 +4,12 @@ class Tool {
         this.miningPower = 1;
         this.name = name;
         this.miningPower = power;
-        this.spritePath = `assets/sprites/tools/${name}.png`;
+        this.path = `assets/sprites/tools/base/${name}.png`;
+        this.scalledPath = `assets/sprites/tools/scalled/${name}.png`;
         Tool.tools.push(this);
     }
     updateCursor() {
-        coalButton.style.cursor = `url(../${this.spritePath}), auto`;
+        coalButton.style.cursor = `url(../${this.scalledPath}), auto`;
     }
 }
 Tool.tools = new Array();

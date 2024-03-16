@@ -3,21 +3,23 @@ class Tool
     public static tools: Tool[] = new Array<Tool>();
 
     public name: string;
-    public spritePath: string;
+    public path: string;
+    public scalledPath: string;
     public miningPower: number = 1;
 
     constructor(name: string,  power: number)
     {
         this.name = name;
         this.miningPower = power;
-        this.spritePath = `assets/sprites/tools/${name}.png`;
+        this.path = `assets/sprites/tools/base/${name}.png`;
+        this.scalledPath = `assets/sprites/tools/scalled/${name}.png`;
 
         Tool.tools.push(this)
     }
 
     public updateCursor() :void
     {
-        coalButton.style.cursor = `url(../${this.spritePath}), auto`;
+        coalButton.style.cursor = `url(../${this.scalledPath}), auto`;
     }
 
     public static hand: Tool = new Tool("hand", 1);
