@@ -20,6 +20,7 @@ body {
 
 aside {
     
+    /* Tego już niema */
     & ul {
         list-style: none;
 
@@ -69,6 +70,10 @@ aside {
 
     & progress::-webkit-progress-value {
         background-color: green;
+    }
+
+    & h3 {
+        margin-top: 1rem;
     }
 }
 

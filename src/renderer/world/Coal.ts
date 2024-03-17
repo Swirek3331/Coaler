@@ -139,6 +139,21 @@ class Coal
         }
     }
 
+    public sell()
+    {
+        money += this.amount * this.price;
+        this.amount = 0;
+        updateLabels();
+    }
+
+    public static sellAll()
+    {
+        for (const coal of Coal.coals)
+        {
+            coal.sell()    
+        }
+    }
+
     public static coal = new Coal("better-coal", true)
     public static blackRock = new Coal("black-rock", false)
     public static lignite = new Coal("lignite", false)

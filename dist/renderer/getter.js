@@ -2,8 +2,10 @@
 const main = document.querySelector("main");
 const coalButton = document.getElementById("coal-button");
 const nameLabel = document.getElementById("company-name-display");
-const coalLabel = document.getElementById("coal-display");
+const coalLabel = document.getElementById("coal-display"); //co to jest?
 const coalHealthBar = document.querySelector("progress");
+const moneyLabel = document.getElementById("money-label");
+const moneyHeading = document.getElementById("money-heading");
 const zombek = document.getElementById("zombek");
 const copyright = document.getElementById("copyright");
 const settingsDialog = document.querySelector("dialog#settings-dialog");

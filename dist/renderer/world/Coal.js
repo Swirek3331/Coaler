@@ -86,6 +86,16 @@ class Coal {
             this.labelImg.src = "../assets/sprites/ui/lock.png";
         }
     }
+    sell() {
+        money += this.amount * this.price;
+        this.amount = 0;
+        updateLabels();
+    }
+    static sellAll() {
+        for (const coal of Coal.coals) {
+            coal.sell();
+        }
+    }
 }
 Coal.coals = new Array();
 Coal.coal = new Coal("better-coal", true);
