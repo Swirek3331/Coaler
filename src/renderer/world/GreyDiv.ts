@@ -110,11 +110,7 @@ class ShopItems
         div.appendChild(img)
         div.appendChild(priceTag)
         div.classList.add("shop-item")
-
-        if (Menu.shopMenu.controls.length % 3 == 0)
-        {
-            Menu.shopMenu.controlsContainer.appendChild(document.createElement("br"))
-        }
+        div.addEventListener("click", this.equip)
 
         img.src = tool.scalledPath
         title.innerHTML = tool.title
@@ -123,5 +119,12 @@ class ShopItems
         this.tool = tool
 
         Menu.shopMenu.controls.push(this)
+    }
+
+    //na razie
+    public equip()
+    {
+        currentTool = this.tool
+        currentTool.updateCursor()
     }
 }

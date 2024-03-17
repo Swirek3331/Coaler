@@ -7,6 +7,7 @@ class Tool {
         this.scalledPath = `../assets/sprites/tools/scalled/${name}.png`;
         this.miningPower = power;
         this.cost = power * 10;
+        this.control = new ShopItems(this);
         Tool.tools.push(this);
     }
     updateCursor() {
@@ -16,3 +17,4 @@ class Tool {
 Tool.tools = new Array();
 Tool.hand = new Tool("hand");
 Tool.pickaxe = new Tool("pickaxe", 5);
+Tool.crowbar = new Tool("crowbar", 10);
