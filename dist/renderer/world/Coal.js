@@ -5,9 +5,9 @@ class Coal {
         this.price = 1;
         this.amount = 0;
         this.unlocked = false;
-        this.path = `assets/sprites/coals/normal/${name}.png`;
-        this.scalledPath = `assets/sprites/coals/scalled/${name}.png`;
-        this.smallerPath = `assets/sprites/coals/smaller/${name}.png`;
+        this.path = `../assets/sprites/coals/normal/${name}.png`;
+        this.scalledPath = `../assets/sprites/coals/scalled/${name}.png`;
+        this.smallerPath = `../assets/sprites/coals/smaller/${name}.png`;
         this.baseHardness = quadtraticGrowth(4 + Coal.coals.length);
         this.hardnes = this.baseHardness;
         this.health = this.hardnes;
@@ -28,7 +28,7 @@ class Coal {
         li.appendChild(img);
         img.alt = name;
         if (this.unlocked) {
-            img.src = "../" + this.path;
+            img.src = this.path;
         }
         else {
             img.src = "../assets/sprites/ui/lock.png";

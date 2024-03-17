@@ -13,7 +13,7 @@ function coalFinish() :void
 
 function updateLabels() :void
 {
-    coalButton.src = `../${currentCoal.scalledPath}`;
+    coalButton.src = currentCoal.scalledPath;
     nameLabel.innerHTML = companyName;
     coalHealthBar.value = currentCoal.health;
     currentTool.updateCursor()
@@ -21,5 +21,3 @@ function updateLabels() :void
 
     Coal.updateLabels()
 }
-
-coalButton.addEventListener("click", currentCoal.click)
