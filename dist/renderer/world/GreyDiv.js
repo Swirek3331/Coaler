@@ -77,8 +77,8 @@ class ShopItems {
         div.appendChild(img);
         div.appendChild(priceTag);
         div.classList.add("shop-item");
-        if (Tool.tools.length % 3 == 0) {
-            div.appendChild(document.createElement("br"));
+        if (Menu.shopMenu.controls.length % 3 == 0) {
+            Menu.shopMenu.controlsContainer.appendChild(document.createElement("br"));
         }
         img.src = tool.scalledPath;
         title.innerHTML = tool.title;
