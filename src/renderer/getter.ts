@@ -2,9 +2,10 @@ const main = document.querySelector("main")!
 
 const coalButton = document.getElementById("coal-button") as HTMLImageElement
 
-const nameLabel = document.getElementById("company-name-display") as HTMLDialogElement
-const coalLabel = document.getElementById("coal-display")  as HTMLDialogElement
+const nameLabel = document.getElementById("company-name-display")!
+const coalLabel = document.getElementById("coal-display")!//co to jest?
 const coalHealthBar = document.querySelector("progress")!
+const moneyLabel = document.getElementById("money-label")!
 
 const zombek = document.getElementById("zombek") as HTMLImageElement
 const copyright = document.getElementById("copyright") as HTMLImageElement

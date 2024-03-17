@@ -21,3 +21,8 @@ function updateLabels() :void
 
     Coal.updateLabels()
 }
+
+const sellButton = document.createElement("button")//to może nie jest etyczne
+Menu.shopMenu.shoperContainer.appendChild(sellButton)
+sellButton.innerHTML = "Sprzedaj wszystko";
+sellButton.style.marginTop = "316px";
