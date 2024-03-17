@@ -3,9 +3,6 @@ function cheatsAlert() {
     console.log("This function requires cheats to be enabled");
 }
 function setCoalShow() {
-    if (devMode) {
-        return;
-    }
     coalShow = !coalShow;
     if (coalShow) {
         unlockAll();
