@@ -34,12 +34,16 @@ class Menu {
         this.dialog.style.width = `${Menu.width}px`;
         this.dialog.style.height = `${Menu.height}px`;
         this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
+        this.dialog.id = `${name}-menu-dialog`;
 
         this.shoperContainer.style.width = `${Menu.width/2}px`;
         this.shoperContainer.style.height = `${Menu.height}px`;
+        this.shoperContainer.id = `${name}-menu-shoper-container`;
 
         this.controlsContainer.style.width = `${Menu.width/2}px`;
         this.controlsContainer.style.height = `${Menu.height}px`;
+        this.controlsContainer.id = `${name}-menu-controls-container`;
+        this.controlsContainer.classList.add("shop-container")
         
         Menu.menus.push(this)
     }
@@ -95,16 +99,21 @@ class ShopItems
 
     constructor(tool: Tool)
     {
+        //Na razie to będzie lokalne
         let title = document.createElement("h3")
         let div = document.createElement("div")
         let img = document.createElement("img")
+        let priceTag = document.createElement("p")
 
         Menu.shopMenu.controlsContainer.appendChild(div)
         div.appendChild(title)
         div.appendChild(img)
+        div.appendChild(priceTag)
+        div.classList.add("shop-item")
 
-        img.src = tool.path
+        img.src = tool.scalledPath
         title.innerHTML = tool.title
+        priceTag.innerHTML = `${tool.cost} $`;
 
         this.tool = tool
 

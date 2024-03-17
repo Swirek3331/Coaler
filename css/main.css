@@ -119,6 +119,8 @@ dialog {
 
     transform: translate(-50%, -50%);
     text-align: center;
+
+    border: none;
 }
 
 dialog {
@@ -162,4 +164,16 @@ dialog.settings {
 
 input {
     color: black;
+}
+
+div.shop-item {
+    
+}
+
+div.shop-container {
+    padding: 84px 32px 12px 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

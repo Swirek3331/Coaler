@@ -3,18 +3,22 @@ class Tool
     public static tools: Tool[] = new Array<Tool>();
 
     public name: string;
+    public title: string;
     public path: string;
     public scalledPath: string;
+
     public miningPower: number;
-    public title: string;
+    public cost: number;
 
     constructor(name: string,  power: number = 1, title: string = name)
     {
         this.name = name;
-        this.miningPower = power;
+        this.title = title;
         this.path = `../assets/sprites/tools/base/${name}.png`;
         this.scalledPath = `../assets/sprites/tools/scalled/${name}.png`;
-        this.title = title;
+
+        this.miningPower = power;
+        this.cost = power * 10;
 
         Tool.tools.push(this)
     }
