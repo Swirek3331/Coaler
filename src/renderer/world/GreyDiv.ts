@@ -110,7 +110,7 @@ class ShopItems
         div.appendChild(img)
         div.appendChild(priceTag)
         div.classList.add("shop-item")
-        div.addEventListener("click", this.equip.bind(this))
+        div.addEventListener("click", this.buy.bind(this))
 
         img.src = tool.scalledPath
         title.innerHTML = tool.title
@@ -126,6 +126,19 @@ class ShopItems
     {
         currentTool = this.tool
         currentTool.updateCursor()
+    }
+
+    public buy()
+    {
+        if (money < this.tool.cost || this.tool == currentTool)
+        {
+            return
+        }
+
+        money -= this.tool.cost
+        currentTool = this.tool
+
+        updateLabels()
     }
 
     public static init()
