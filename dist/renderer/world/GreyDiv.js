@@ -77,7 +77,7 @@ class ShopItems {
         div.appendChild(img);
         div.appendChild(priceTag);
         div.classList.add("shop-item");
-        div.addEventListener("click", this.equip);
+        div.addEventListener("click", this.equip.bind(this));
         img.src = tool.scalledPath;
         title.innerHTML = tool.title;
         priceTag.innerHTML = `${tool.cost} $`;
@@ -88,5 +88,10 @@ class ShopItems {
     equip() {
         currentTool = this.tool;
         currentTool.updateCursor();
+    }
+    static init() {
+        for (const tool of Tool.tools) {
+            new ShopItems(tool);
+        }
     }
 }

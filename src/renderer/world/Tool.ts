@@ -10,8 +10,6 @@ class Tool
     public miningPower: number;
     public cost: number;
 
-    public control: ShopItems;
-
     constructor(name: string,  power: number = 1, title: string = name)
     {
         this.name = name;
@@ -22,7 +20,6 @@ class Tool
         this.miningPower = power;
         this.cost = power * 10;
 
-        this.control = new ShopItems(this);
 
         Tool.tools.push(this)
     }
