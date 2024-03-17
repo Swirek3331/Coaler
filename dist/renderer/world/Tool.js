@@ -18,3 +18,4 @@ Tool.tools = new Array();
 Tool.hand = new Tool("hand");
 Tool.pickaxe = new Tool("pickaxe", 5);
 Tool.crowbar = new Tool("crowbar", 10);
+currentTool = Tool.hand;

@@ -36,3 +36,5 @@ class Tool
     public static pickaxe: Tool = new Tool("pickaxe", 5);
     public static crowbar: Tool = new Tool("crowbar", 10);
 }
+
+currentTool = Tool.hand;

@@ -135,3 +135,5 @@ class Coal
     public static darkMatterCoal = new Coal("dark-matter-coal", false)
     public static nigger = new Coal("nigger", false)
 }
+
+currentCoal = Coal.coal;
