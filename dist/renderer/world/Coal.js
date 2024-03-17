@@ -38,6 +38,7 @@ class Coal {
         span.id = `${name}-label`;
         span.innerHTML = this.amount.toString();
         this.amountLabel = span;
+        this.labelImg = img;
     }
     static nextCoal(current) {
         return next(Coal.coals, current);
@@ -47,6 +48,7 @@ class Coal {
             return;
         }
         this.unlocked = true;
+        this.updateLabel();
     }
     click() {
         if (currentCoal.health == 0) {
@@ -72,7 +74,16 @@ class Coal {
     }
     static updateLabels() {
         for (let coal of Coal.coals) {
-            coal.amountLabel.innerHTML = coal.amount.toString();
+            coal.updateLabel();
+        }
+    }
+    updateLabel() {
+        this.amountLabel.innerHTML = this.amount.toString();
+        if (this.unlocked) {
+            this.labelImg.src = this.path;
+        }
+        else {
+            this.labelImg.src = "../assets/sprites/ui/lock.png";
         }
     }
 }

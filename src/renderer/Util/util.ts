@@ -11,6 +11,8 @@ function setCoalShow()
     {
         unlockAll();
     }
+
+    updateLabels()
 }
 
 function unlockAll()

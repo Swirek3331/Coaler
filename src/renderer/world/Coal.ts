@@ -12,9 +12,11 @@ class Coal
     price: number = 1;
     amount: number = 0;
 
+
     unlocked: boolean = false;
 
     amountLabel: HTMLSpanElement;
+    labelImg: HTMLImageElement;
 
     constructor(name: string, unlocked: boolean)
     {
@@ -62,6 +64,7 @@ class Coal
         span.id = `${name}-label`;
         span.innerHTML = this.amount.toString();
         this.amountLabel = span;
+        this.labelImg = img;
     }
     
     public static nextCoal(current: Coal | number): Coal
@@ -77,6 +80,7 @@ class Coal
         }
 
         this.unlocked = true;
+        this.updateLabel();
     }
 
     public click() :void
@@ -117,7 +121,21 @@ class Coal
     {
         for (let coal of Coal.coals)
         {
-            coal.amountLabel.innerHTML = coal.amount.toString();
+            coal.updateLabel()
+        }
+    }
+
+    public updateLabel()
+    {
+        this.amountLabel.innerHTML = this.amount.toString();
+        
+        if (this.unlocked)
+        {
+            this.labelImg.src = this.path;
+        }
+        else
+        {
+            this.labelImg.src = "../assets/sprites/ui/lock.png";
         }
     }
 
