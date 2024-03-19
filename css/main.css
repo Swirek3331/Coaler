@@ -14,8 +14,12 @@
 body {
     height: 100%;
 
-    background-color: black;
+    background-color: skyblue;
     overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../assets/sprites/backgrounds/scalled/bg_middle03.png");
 }
 
 aside {
