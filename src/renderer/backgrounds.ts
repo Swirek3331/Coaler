@@ -5,12 +5,13 @@ let previousBackground = 0
 
 function nextBackground()
 {
-    let next = randomInt(1, backgroundAmount)
+    let next: number;
 
-    while (next == currentBackground || next == previousBackground)
+    do 
     {
         next = randomInt(1, backgroundAmount)
-    }
+    } 
+    while (next === currentBackground || next === previousBackground)
 
     previousBackground = currentBackground
     currentBackground = next

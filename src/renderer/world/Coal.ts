@@ -162,19 +162,22 @@ class Coal
         }
     }
 
-    public static coal = new Coal("better-coal", true)
-    public static blackRock = new Coal("black-rock", false)
-    public static lignite = new Coal("lignite", false)
-    public static charcoal = new Coal("charcoal", false)
-    public static rockCoal = new Coal("rock-coal", false)
-    public static anthracite = new Coal("anthracite", false)
-    public static coalCoke = new Coal("coal-coke", false)
-    public static oilCoke = new Coal("oil-coke", false)
-    public static airCoal = new Coal("aircoal", false)
-    public static spaceCoal = new Coal("space-coal", false) //On jest dobry
-    public static voidCoal = new Coal("void-coal", false)
-    public static darkMatterCoal = new Coal("dark-matter-coal", false)
-    public static nigger = new Coal("nigger", false)
+    public static coal = new Coal("better-coal", true, "Węgiel")
+    public static blackRock = new Coal("black-rock", false, "Czarny Kamień")
+    public static lignite = new Coal("lignite", false, "Węgiel Brunatny")
+    public static charcoal = new Coal("charcoal", false, "Węgiel Drzewny")
+    public static rockCoal = new Coal("rock-coal", false, "Węgiel Kamienny")
+    public static anthracite = new Coal("anthracite", false, "Antracyt")
+    public static coalCoke = new Coal("coal-coke", false, "Koks Węglowy")
+    public static oilCoke = new Coal("oil-coke", false, "Koks Naftowy")
+    public static airCoal = new Coal("aircoal", false, "Aerowęgiel")
+    public static spaceCoal = new Coal("space-coal", false, "Kosmiczny Węgiel") //On jest dobry
+    public static voidCoal = new Coal("void-coal", false, "Węgiel Pustki")
+    public static darkMatterCoal = new Coal("dark-matter-coal", false, "Węgiel Ciemnej Materii")
+    public static terminatorCoal = new Coal("terminator-coal", false, "Węgiel Terminatora")
+    public static matrixCoal = new Coal("matrix-coal", false, "Węgiel Matrix")
+    public static holyCoal = new Coal("holy-coal", false, "Święty Węgiel")
+    public static nigger = new Coal("nigger", false, "Najczarniejszy Węgiel")
 }
 
 currentCoal = Coal.coal;
@@ -227,6 +230,11 @@ class CoalItem //extends Item
     {
         for (const coal of Coal.coals)
         {
+            if (coal.unlocked)
+            {
+                continue
+            }
+
             new CoalItem(coal)
         }
     }
