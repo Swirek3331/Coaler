@@ -182,3 +182,7 @@ div.shop-container {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+dialog.menu-dialog {
+    background-color: rgba(0, 0, 0, 255);
+}

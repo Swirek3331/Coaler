@@ -35,6 +35,7 @@ class Menu {
         this.dialog.style.height = `${Menu.height}px`;
         this.dialog.style.backgroundImage = `url(${this.scalledPath})`;
         this.dialog.id = `${name}-menu-dialog`;
+        this.dialog.classList.add("menu-dialog")
 
         this.shoperContainer.style.width = `${Menu.width/2}px`;
         this.shoperContainer.style.height = `${Menu.height}px`;

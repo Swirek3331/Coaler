@@ -173,5 +173,5 @@ currentCoal = Coal.coal;
 
 class CoalItem
 {
-
+    
 }
