@@ -15,26 +15,95 @@ class Miner
     {
 
 
-        this.name = name;
-        this.title = title;
-        this.path = `../assets/sprites/miners/${name}.png`;
+        this.name = name
+        this.title = title
+        this.path = `../assets/sprites/miners/normal/${name}.png`;
         this.scalledPath = `../assets/sprites/miners/scalled/${name}.png`;
-        this.price = linearGrowth(Miner.miners.length);
-        this.amount = 0;
-        this.power = power;
+        this.price = linearGrowth(Miner.miners.length + 3)
+        this.amount = 0
+        this.power = power
 
-        Miner.miners.push(this);
+        Miner.miners.push(this)
     }
+
+    public work()
+    {
+        if (this.amount == 0)
+        {
+            return
+        }
+
+        if (currentCoal.health == 0)
+        {
+            coalFinish()
+        }
+        else
+        {
+            if (currentCoal.health - this.power * this.amount < 0)
+            {
+                coalFinish()
+            }
+            else
+            {
+                currentCoal.health -= this.power * this.amount
+            }
+        }
+        
+        updateLabels()
+    }
+
+    public static work()
+    {
+        for (const miner of Miner.miners)
+        {
+            miner.work()
+        }
+    }
+
+    public static mrMiner = new Miner("mr-miner", "Mr. Miner")
 }
 
 class MinerItem
 {
-    miner: Miner;
+    miner: Miner
 
     constructor(miner: Miner)
     {
+        let title = document.createElement("h3")
+        let div = document.createElement("div")
+        let img = document.createElement("img")
+        let priceTag = document.createElement("p")
 
+        Menu.productionMenu.controlsContainer.appendChild(div)
+        div.appendChild(title)
+        div.appendChild(img)
+        div.appendChild(priceTag)
+        div.classList.add("item", "miner-item")
+        div.addEventListener("click", this.buy.bind(this))
 
-        this.miner = miner;
+        img.src = miner.scalledPath
+        title.innerHTML = miner.title
+        priceTag.innerHTML = `${miner.price} $`;
+
+        this.miner = miner
+    }
+
+    public buy()
+    {
+        if (money < this.miner.price)
+        {
+            return
+        }
+
+        money -= this.miner.price
+        this.miner.amount++
+    }
+
+    public static init()
+    {
+        for (const miner of Miner.miners)
+        {
+            new MinerItem(miner)
+        }
     }
 }
