@@ -165,6 +165,16 @@ dialog.settings {
         background-color: white;
         color: black;
     }
+
+    & ul {
+        list-style: none;
+        
+        margin-top: 3rem;
+
+        & li {
+            margin: 1rem;
+        }
+    }
 }
 
 input {

@@ -12,7 +12,7 @@ class Menu {
     container: HTMLDivElement = document.createElement("div")
     shoperContainer: HTMLDivElement = document.createElement("div")
     controlsContainer: HTMLDivElement = document.createElement("div")
-    controls: ShopItems[] = new Array<ShopItems>()
+    controls: any[] = new Array<any>()
 
     constructor(name: string, title: string = name)
     {
@@ -94,7 +94,7 @@ class Menu {
     static coalsMenu: Menu = new Menu("coals", "Węgle")
 }
 
-class ShopItems 
+class ShopItems
 {
     tool: Tool;
 
@@ -110,7 +110,7 @@ class ShopItems
         div.appendChild(title)
         div.appendChild(img)
         div.appendChild(priceTag)
-        div.classList.add("shop-item")
+        div.classList.add("item", "shop-item")
         div.addEventListener("click", this.buy.bind(this))
 
         img.src = tool.scalledPath
