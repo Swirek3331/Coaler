@@ -1,18 +1,22 @@
 "use strict";
 class Coal {
-    constructor(name, unlocked) {
+    constructor(name, unlocked, title = name) {
         this.baseHardness = 10;
         this.price = 1;
         this.amount = 0;
         this.unlocked = false;
+        this.bought = false;
         this.path = `../assets/sprites/coals/normal/${name}.png`;
         this.scalledPath = `../assets/sprites/coals/scalled/${name}.png`;
         this.smallerPath = `../assets/sprites/coals/smaller/${name}.png`;
+        this.title = title;
         this.baseHardness = quadtraticGrowth(4 + Coal.coals.length);
         this.hardnes = this.baseHardness;
         this.health = this.hardnes;
         this.price = linearGrowth(Coal.coals.length);
         this.unlocked = unlocked;
+        this.bought = unlocked;
+        this.cost = this.price * 10;
         Coal.coals.push(this);
         let li = document.createElement("li");
         if (Coal.coals.length == 1 || Coal.coals.length % 4 == 1) {
@@ -112,5 +116,43 @@ Coal.voidCoal = new Coal("void-coal", false);
 Coal.darkMatterCoal = new Coal("dark-matter-coal", false);
 Coal.nigger = new Coal("nigger", false);
 currentCoal = Coal.coal;
-class CoalItem {
+class CoalItem //extends Item
+ {
+    constructor(coal) {
+        //Na razie to będzie lokalne
+        let title = document.createElement("h3");
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        let priceTag = document.createElement("p");
+        Menu.coalsMenu.controlsContainer.appendChild(div);
+        div.appendChild(title);
+        div.appendChild(img);
+        div.appendChild(priceTag);
+        div.classList.add("item", "shop-item");
+        div.addEventListener("click", this.buy.bind(this));
+        img.src = coal.scalledPath;
+        title.innerHTML = coal.title;
+        priceTag.innerHTML = `${coal.cost} $`;
+        this.coal = coal;
+        Menu.coalsMenu.controls.push(this);
+    }
+    //na razie
+    equip() {
+        currentCoal = this.coal;
+        currentCoal.updateLabel();
+    }
+    buy() {
+        if (money < this.coal.cost || this.coal.bought) {
+            return;
+        }
+        money -= this.coal.cost;
+        currentCoal = this.coal;
+        Menu.coalsMenu.close();
+        updateLabels();
+    }
+    static init() {
+        for (const coal of Coal.coals) {
+            new CoalItem(coal);
+        }
+    }
 }

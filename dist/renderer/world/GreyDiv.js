@@ -77,7 +77,7 @@ class ShopItems {
         div.appendChild(title);
         div.appendChild(img);
         div.appendChild(priceTag);
-        div.classList.add("shop-item");
+        div.classList.add("item", "shop-item");
         div.addEventListener("click", this.buy.bind(this));
         img.src = tool.scalledPath;
         title.innerHTML = tool.title;
