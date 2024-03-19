@@ -1,4 +1,7 @@
 "use strict";
+function randomInt(min = 0, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 function next(arr, current) {
     if (typeof current == "number") {
         if (current >= arr.length - 1)

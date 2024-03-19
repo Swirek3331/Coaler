@@ -1,3 +1,4 @@
+const body = document.body
 const main = document.querySelector("main")!
 
 const coalButton = document.getElementById("coal-button") as HTMLImageElement

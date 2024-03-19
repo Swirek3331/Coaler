@@ -1,3 +1,8 @@
+function randomInt(min: number = 0, max: number)
+{
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function next<T>(arr: Array<T>, current: number | T) :T
 {
     if (typeof current == "number")

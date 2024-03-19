@@ -1,4 +1,5 @@
 "use strict";
+const body = document.body;
 const main = document.querySelector("main");
 const coalButton = document.getElementById("coal-button");
 const nameLabel = document.getElementById("company-name-display");
