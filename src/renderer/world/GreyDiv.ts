@@ -87,10 +87,10 @@ class Menu {
         this.opened = false
     }
 
-    static productionMenu: Menu = new Menu("production")
-    static shopMenu: Menu = new Menu("shop")
+    static shopMenu: Menu = new Menu("shop", "Sklep")
+    static sellMenu: Menu = new Menu("sell", "Sprzedaż")
     static emissionMenu: Menu = new Menu("emission")
-    static coalsMenu: Menu = new Menu("coals")
+    static coalsMenu: Menu = new Menu("coals", "Węgle")
 }
 
 class ShopItems 
@@ -138,6 +138,7 @@ class ShopItems
         money -= this.tool.cost
         currentTool = this.tool
 
+        Menu.shopMenu.close()
         updateLabels()
     }
 

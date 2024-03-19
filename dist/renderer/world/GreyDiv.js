@@ -61,10 +61,10 @@ class Menu {
 Menu.menus = new Array();
 Menu.width = 1024;
 Menu.height = 512;
-Menu.productionMenu = new Menu("production");
-Menu.shopMenu = new Menu("shop");
+Menu.shopMenu = new Menu("shop", "Sklep");
+Menu.productionMenu = new Menu("production", "Sprzedaż");
 Menu.emissionMenu = new Menu("emission");
-Menu.coalsMenu = new Menu("coals");
+Menu.coalsMenu = new Menu("coals", "Węgle");
 class ShopItems {
     constructor(tool) {
         //Na razie to będzie lokalne
@@ -95,6 +95,7 @@ class ShopItems {
         }
         money -= this.tool.cost;
         currentTool = this.tool;
+        Menu.shopMenu.close();
         updateLabels();
     }
     static init() {

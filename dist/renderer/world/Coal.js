@@ -112,3 +112,5 @@ Coal.voidCoal = new Coal("void-coal", false);
 Coal.darkMatterCoal = new Coal("dark-matter-coal", false);
 Coal.nigger = new Coal("nigger", false);
 currentCoal = Coal.coal;
+class CoalItem {
+}
