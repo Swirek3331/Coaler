@@ -195,6 +195,7 @@ class CoalItem //extends Item
         let priceTag = document.createElement("p")
 
         Menu.coalsMenu.controlsContainer.appendChild(div)
+
         div.appendChild(title)
         div.appendChild(img)
         div.appendChild(priceTag)
