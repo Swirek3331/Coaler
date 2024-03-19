@@ -90,7 +90,7 @@ class Menu {
 
     static shopMenu: Menu = new Menu("shop", "Sklep")
     static sellMenu: Menu = new Menu("sell", "Sprzedaż")
-    static emissionMenu: Menu = new Menu("emission")
+    static productionMenu: Menu = new Menu("production", "Produkcja")
     static coalsMenu: Menu = new Menu("coals", "Węgle")
 }
 
