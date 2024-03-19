@@ -128,7 +128,7 @@ dialog {
     border: none;
 }
 
-dialog {
+dialog.menu-dialog {
     display: none;
     overflow: hidden;
 }
@@ -181,8 +181,4 @@ div.shop-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-dialog.menu-dialog {
-    background-color: rgba(0, 0, 0, 255);
 }
