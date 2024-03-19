@@ -80,12 +80,14 @@ class Coal
 
     public unlock(): void
     {
-        if  (this.unlocked)
+        if  (this.unlocked && this.bought)
         {
             return;
         }
 
         this.unlocked = true;
+        this.bought = true;
+
         this.updateLabel();
     }
 
@@ -205,13 +207,6 @@ class CoalItem //extends Item
         Menu.coalsMenu.controls.push(this)
     }
 
-    //na razie
-    public equip()
-    {
-        currentCoal = this.coal
-        currentCoal.updateLabel()
-    }
-
     public buy()
     {
         if (money < this.coal.cost || this.coal.bought)
@@ -221,6 +216,8 @@ class CoalItem //extends Item
 
         money -= this.coal.cost
         currentCoal = this.coal
+
+        this.coal.unlock()
 
         Menu.coalsMenu.close()
         updateLabels()

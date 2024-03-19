@@ -48,10 +48,11 @@ class Coal {
         return next(Coal.coals, current);
     }
     unlock() {
-        if (this.unlocked) {
+        if (this.unlocked && this.bought) {
             return;
         }
         this.unlocked = true;
+        this.bought = true;
         this.updateLabel();
     }
     click() {
@@ -136,17 +137,13 @@ class CoalItem //extends Item
         this.coal = coal;
         Menu.coalsMenu.controls.push(this);
     }
-    //na razie
-    equip() {
-        currentCoal = this.coal;
-        currentCoal.updateLabel();
-    }
     buy() {
         if (money < this.coal.cost || this.coal.bought) {
             return;
         }
         money -= this.coal.cost;
         currentCoal = this.coal;
+        this.coal.unlock();
         Menu.coalsMenu.close();
         updateLabels();
     }
