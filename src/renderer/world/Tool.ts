@@ -38,6 +38,7 @@ class Tool
     public static ironHand: Tool = new Tool("iron-hand", 15, "Żelazna ręka");
     public static diamondPickaxe: Tool = new Tool("diamond-pickaxe", 30, "Diamentowy kilof");
     public static csharper: Tool = new Tool("csharper", 50, "C#per");
+    public static plasmaCutter: Tool = new Tool("plasma-cutter", 100, "Przecinak plazmowy");
 }
 
 currentTool = Tool.hand;
