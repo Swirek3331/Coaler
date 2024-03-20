@@ -41,7 +41,7 @@ class Coal
 
         let li = document.createElement("li");
 
-        if (Coal.coals.length == 1 || Coal.coals.length % 4 == 1)
+        if (Coal.coals.length == 1 || Coal.coals.length % 3 == 1)
         {
             let div = document.createElement("div");
             coalList.appendChild(div);

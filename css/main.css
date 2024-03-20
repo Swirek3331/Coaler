@@ -77,16 +77,24 @@ aside {
 }
 
 main {
+
     & h2 {
         text-align: right;
     }
 
     & nav {
         background-color: transparent;
-        background-image: url(../assets/sprites/ui/sign.png);
+        background-image: url(../assets/sprites/ui/sign-scalled-2.png);
+        background-size: cover;
         background-repeat: no-repeat;
 
+
+        width: 100%;
+        height: auto;
+
         & ul {
+            padding: 3rem;
+
             text-align: center;
             list-style-type: none;
 
@@ -98,7 +106,6 @@ main {
 }
 
 aside, main {
-    padding: 1rem;
     text-align: center;
 }
 
