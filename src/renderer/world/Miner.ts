@@ -79,26 +79,50 @@ class Miner
 class MinerItem
 {
     miner: Miner
+    amountTag: HTMLParagraphElement
 
     constructor(miner: Miner)
     {
         let title = document.createElement("h3")
         let div = document.createElement("div")
         let img = document.createElement("img")
+        let amounTag = document.createElement("p")
+        let powerTag = document.createElement("p")
         let priceTag = document.createElement("p")
 
-        Menu.productionMenu.controlsContainer.appendChild(div)
+        if (Menu.productionMenu.controls.length == 0 || Menu.productionMenu.controls.length % 3 == 0)
+        {
+            let flexDiv = document.createElement("div")
+            Menu.productionMenu.controlsContainer.appendChild(flexDiv)
+            flexDiv.classList.add("flex")
+            flexDiv.style.width = "100%";
+            flexDiv.style.height = "33.33%";
+            flexDiv.appendChild(div)
+        }
+        else
+        {
+            let flexDiv = Menu.productionMenu.controlsContainer.lastElementChild as HTMLDivElement
+            flexDiv.appendChild(div)
+        }
+
         div.appendChild(title)
         div.appendChild(img)
+        div.appendChild(amounTag)
+        div.appendChild(powerTag)
         div.appendChild(priceTag)
         div.classList.add("item", "miner-item")
         div.addEventListener("click", this.buy.bind(this))
 
         img.src = miner.scalledPath
         title.innerHTML = miner.title
-        priceTag.innerHTML = `${miner.price} $`;
+        amounTag.innerHTML = `Ilość: ${miner.amount}`;
+        powerTag.innerHTML = `Moc: ${miner.power}`;
+        priceTag.innerHTML = `Cena: ${miner.price} $`;
 
         this.miner = miner
+        this.amountTag = amounTag
+
+        Menu.productionMenu.controls.push(this)
     }
 
     public buy()
@@ -110,6 +134,8 @@ class MinerItem
 
         money -= this.miner.price
         this.miner.amount++
+        this.amountTag.innerHTML = `Ilość: ${this.miner.amount}`;
+
 
         updateLabels()
     }

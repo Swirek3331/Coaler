@@ -81,7 +81,7 @@ class ShopItems
         img.src = tool.scalledPath
         title.innerHTML = tool.title
         powerTag.innerHTML = `Moc: ${tool.miningPower}`;
-        priceTag.innerHTML = `${tool.cost} $`;
+        priceTag.innerHTML = `Cena: ${tool.cost} $`;
 
         this.tool = tool
         this.div = div
