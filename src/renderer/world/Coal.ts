@@ -228,19 +228,38 @@ class CoalItem //extends Item
         let title = document.createElement("h3")
         let div = document.createElement("div")
         let img = document.createElement("img")
+        let valueTag = document.createElement("p")
+        let hardnesTag = document.createElement("p")
         let priceTag = document.createElement("p")
 
-        Menu.coalsMenu.controlsContainer.appendChild(div)
+        if (Menu.coalsMenu.controls.length == 0 || Menu.coalsMenu.controls.length % 3 == 0)
+        {
+            let flexDiv = document.createElement("div")
+            Menu.coalsMenu.controlsContainer.appendChild(flexDiv)
+            flexDiv.classList.add("flex")
+            flexDiv.style.width = "100%";
+            flexDiv.style.height = "33.33%";
+            flexDiv.appendChild(div)
+        }
+        else
+        {
+            let flexDiv = Menu.coalsMenu.controlsContainer.lastElementChild as HTMLDivElement
+            flexDiv.appendChild(div)
+        }
 
         div.appendChild(title)
         div.appendChild(img)
+        div.appendChild(valueTag)
+        div.appendChild(hardnesTag)
         div.appendChild(priceTag)
         div.classList.add("item", "shop-item")
         div.addEventListener("click", this.buy.bind(this))
 
         img.src = coal.shopPath
         title.innerHTML = coal.title
-        priceTag.innerHTML = `${coal.cost} $`;
+        valueTag.innerHTML = `Wartość: ${coal.price}$`;//mylne
+        hardnesTag.innerHTML = `Twardość: ${coal.hardnes}`;
+        priceTag.innerHTML = `Cena: ${coal.cost}$`;
 
         this.coal = coal
         this.div = div
@@ -263,6 +282,7 @@ class CoalItem //extends Item
 
         Menu.coalsMenu.close()
         updateLabels()
+        CoalItem.update()
     }
 
     public static init()
@@ -280,6 +300,12 @@ class CoalItem //extends Item
 
     public static update()
     {
-
+        for (const flexDiv of Menu.coalsMenu.controlsContainer.children)
+        {
+            if (flexDiv.children.length == 0)
+            {
+                flexDiv.remove()
+            }
+        }
     }
 }
