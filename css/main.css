@@ -74,10 +74,6 @@ aside {
     & progress::-webkit-progress-value {
         background-color: green;
     }
-
-    & h3 {
-        margin-top: 1rem;
-    }
 }
 
 main {
@@ -91,6 +87,10 @@ main {
         & ul {
             text-align: center;
             list-style-type: none;
+
+            & div {
+                margin-right: 5rem;
+            }
         }
     }
 }

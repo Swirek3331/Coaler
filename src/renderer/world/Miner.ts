@@ -97,6 +97,9 @@ class MinerItem
 
         money -= this.miner.price
         this.miner.amount++
+
+        Menu.productionMenu.close()
+        updateLabels()
     }
 
     public static init()
