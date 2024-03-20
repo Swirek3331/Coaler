@@ -54,16 +54,33 @@ class ShopItems
         let div = document.createElement("div")
         let img = document.createElement("img")
         let priceTag = document.createElement("p")
+        let powerTag = document.createElement("p")
 
-        Menu.shopMenu.controlsContainer.appendChild(div)
+        if (Menu.shopMenu.controls.length == 0 || Menu.shopMenu.controls.length % 3 == 0)
+        {
+            let flexDiv = document.createElement("div")
+            Menu.shopMenu.controlsContainer.appendChild(flexDiv)
+            flexDiv.classList.add("flex")
+            flexDiv.style.width = "100%";
+            flexDiv.style.height = "33.33%";
+            flexDiv.appendChild(div)
+        }
+        else
+        {
+            let flexDiv = Menu.shopMenu.controlsContainer.lastElementChild as HTMLDivElement
+            flexDiv.appendChild(div)
+        }
+
         div.appendChild(title)
         div.appendChild(img)
+        div.appendChild(powerTag)
         div.appendChild(priceTag)
         div.classList.add("item", "shop-item")
         div.addEventListener("click", this.buy.bind(this))
 
         img.src = tool.scalledPath
         title.innerHTML = tool.title
+        powerTag.innerHTML = `Moc: ${tool.miningPower}`;
         priceTag.innerHTML = `${tool.cost} $`;
 
         this.tool = tool

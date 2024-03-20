@@ -82,7 +82,9 @@ main {
     }
 
     & nav {
-        background-color: grey;
+        background-color: transparent;
+        background-image: url(../assets/sprites/ui/sign.png);
+        background-repeat: no-repeat;
 
         & ul {
             text-align: center;
@@ -193,7 +195,9 @@ input {
 div.shop-container {
     padding: 84px 32px 12px 30px;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    div.flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
