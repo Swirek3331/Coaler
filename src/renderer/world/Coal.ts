@@ -172,8 +172,32 @@ class Coal
         }
     }
 
+    public static coalAmount(): number
+    {
+        let sum = 0;
+
+        for (const coal of Coal.coals)
+        {
+            sum += coal.amount
+        }
+
+        return sum
+    }
+
+    public static funds(): number
+    {
+        let sum = 0;
+
+        for (const coal of Coal.coals)
+        {
+            sum += coal.amount * coal.price
+        }
+
+        return sum
+    }
+
     public static coal = new Coal("better-coal", true, "Węgiel")
-    public static blackRock = new Coal("black-rock", false, "Czarny Kamień")
+    //public static blackRock = new Coal("black-rock", false, "Czarny Kamień")
     public static lignite = new Coal("lignite", false, "Węgiel Brunatny")
     public static charcoal = new Coal("charcoal", false, "Węgiel Drzewny")
     public static rockCoal = new Coal("rock-coal", false, "Węgiel Kamienny")

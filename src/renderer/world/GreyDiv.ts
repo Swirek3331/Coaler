@@ -95,3 +95,4 @@ class Menu {
     static productionMenu: Menu = new Menu("production", "Produkcja")
     static coalsMenu: Menu = new Menu("coals", "Węgle")
 }
+
