@@ -61,6 +61,8 @@ class Miner
     }
 
     public static mrMiner = new Miner("mr-miner", "Mr. Miner")
+    public static elegant = new Miner("elegant", "Elegancik", 5)
+    public static excavator = new Miner("excavator", "Koparka", 10)
 }
 
 class MinerItem

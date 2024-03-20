@@ -202,7 +202,7 @@ class CoalItem //extends Item
         div.classList.add("item", "shop-item")
         div.addEventListener("click", this.buy.bind(this))
 
-        img.src = coal.scalledPath
+        img.src = coal.shopPath
         title.innerHTML = coal.title
         priceTag.innerHTML = `${coal.cost} $`;
 
