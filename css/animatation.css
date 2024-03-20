@@ -1,0 +1,19 @@
+@keyframes slideUp {
+    0% {
+        transform: translateY(0) translateX(-50%);
+        position: fixed;
+        top: 50%;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(-50%);
+        position: fixed;
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+dialog.menu-dialog {
+    animation: slideUp 1s;
+}

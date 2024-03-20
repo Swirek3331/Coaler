@@ -15,5 +15,5 @@ function nextBackground()
 
     previousBackground = currentBackground
     currentBackground = next
-    body.style.backgroundImage = `url(../assets/sprites/backgrounds/scalled/${backgroundKey}${currentBackground}.png)`
+    body.style.backgroundImage = `url(../assets/sprites/backgrounds/scalled/${backgroundKey}${currentBackground}.png)`;
 }
