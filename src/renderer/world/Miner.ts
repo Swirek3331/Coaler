@@ -32,22 +32,33 @@ class Miner
         {
             return
         }
-
-        if (currentCoal.health == 0)
+        
+        let damage = this.power * this.amount;
+        
+        while (damage > 0)
         {
-            coalFinish()
-        }
-        else
-        {
-            if (currentCoal.health - this.power * this.amount < 0)
+            if (currentCoal.health <= 0)
             {
-                coalFinish()
+                Coal.finish()
             }
             else
             {
-                currentCoal.health -= this.power * this.amount
+                const remainingHealth = currentCoal.health - damage;
+        
+                if (remainingHealth < 0)
+                {
+                    Coal.finish();
+                    damage = Math.abs(remainingHealth);
+                }
+                else
+                {
+                    currentCoal.health -= damage;
+                    damage = 0;
+                }
             }
-        }
+            
+            updateLabels();
+        }  
         
         updateLabels()
     }

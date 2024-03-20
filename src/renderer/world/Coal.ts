@@ -93,36 +93,45 @@ class Coal
 
     public click() :void
     {
-        if (currentCoal.health == 0)
+        let damage = currentTool.miningPower
+
+        while (damage > 0)
         {
-            coalFinish()
-        }
-        else
-        {
-            if (currentCoal.health - currentTool.miningPower < 0)
+            if (currentCoal.health <= 0)
             {
-                coalFinish()
+                Coal.finish()
             }
             else
             {
-                currentCoal.health -= currentTool.miningPower
+                const remainingHealth = currentCoal.health - damage
+    
+                if (remainingHealth < 0) 
+                {
+                    Coal.finish()
+                    damage = Math.abs(remainingHealth)
+                }
+                else
+                {
+                    currentCoal.health -= damage;
+                    damage = 0;
+                }
             }
-        }
+        }    
         
         updateLabels()
     }
 
-    public finish() :void
+    public static finish() :void
     {
-        this.amount += 1
-        this.health = this.hardnes
-
+        currentCoal.amount += coalAmount;
+        currentCoal.health = coalHealthBar.max
+        
         if (coalShow)
         {
             currentCoal = Coal.nextCoal(currentCoal)
         }
-
-        Coal.updateLabels()
+    
+        updateLabels()
     }
 
     public static updateLabels() :void
