@@ -21,6 +21,6 @@ function crateWindow() :void
     mainWindow.on("ready-to-show", () => {
         mainWindow.show();
         mainWindow.maximize();
-        mainWindow.setMenu(null);
+        //mainWindow.setMenu(null);
     })
 }

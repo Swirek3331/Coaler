@@ -2,6 +2,7 @@ coalButton.addEventListener("click", currentCoal.click)
 
 ShopItems.init()
 CoalItem.init()
+CoalItem.update()
 MinerItem.init()
 
 nextBackground()
