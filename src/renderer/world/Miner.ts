@@ -19,7 +19,7 @@ class Miner
         this.title = title
         this.path = `../assets/sprites/miners/normal/${name}.png`;
         this.scalledPath = `../assets/sprites/miners/scalled/${name}.png`;
-        this.price = linearGrowth(Miner.miners.length + 3)
+        this.price = power * 10
         this.amount = 0
         this.power = power
 
@@ -100,7 +100,6 @@ class MinerItem
         money -= this.miner.price
         this.miner.amount++
 
-        Menu.productionMenu.close()
         updateLabels()
     }
 

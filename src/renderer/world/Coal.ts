@@ -184,11 +184,13 @@ currentCoal = Coal.coal;
 
 class CoalItem //extends Item
 {
+    public static Items: CoalItem[] = new Array<CoalItem>()
+
     coal: Coal;
+    div: HTMLDivElement;
 
     constructor(coal: Coal)
     {
-        //Na razie to będzie lokalne
         let title = document.createElement("h3")
         let div = document.createElement("div")
         let img = document.createElement("img")
@@ -207,6 +209,7 @@ class CoalItem //extends Item
         priceTag.innerHTML = `${coal.cost} $`;
 
         this.coal = coal
+        this.div = div
 
         Menu.coalsMenu.controls.push(this)
     }
@@ -222,6 +225,7 @@ class CoalItem //extends Item
         currentCoal = this.coal
 
         this.coal.unlock()
+        this.div.remove()
 
         Menu.coalsMenu.close()
         updateLabels()
@@ -238,5 +242,10 @@ class CoalItem //extends Item
 
             new CoalItem(coal)
         }
+    }
+
+    public static update()
+    {
+
     }
 }

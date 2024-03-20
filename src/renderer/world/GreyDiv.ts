@@ -16,8 +16,10 @@ class Menu {
 
     constructor(name: string, title: string = name)
     {
-        this.path = `../assets/sprites/menus/${name}.png`;
-        this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
+        //this.path = `../assets/sprites/menus/${name}.png`;
+        //this.scalledPath = `../assets/sprites/menus/${name}-scalled.png`;
+        this.path = `../assets/sprites/menus/shop.png`;
+        this.scalledPath = `../assets/sprites/menus/shop-scalled.png`;
 
         greyDiv.appendChild(this.container)
         this.container.addEventListener("click", this.open.bind(this))
@@ -92,62 +94,4 @@ class Menu {
     static sellMenu: Menu = new Menu("sell", "Sprzedaż")
     static productionMenu: Menu = new Menu("production", "Produkcja")
     static coalsMenu: Menu = new Menu("coals", "Węgle")
-}
-
-class ShopItems
-{
-    tool: Tool;
-
-    constructor(tool: Tool)
-    {
-        //Na razie to będzie lokalne
-        let title = document.createElement("h3")
-        let div = document.createElement("div")
-        let img = document.createElement("img")
-        let priceTag = document.createElement("p")
-
-        Menu.shopMenu.controlsContainer.appendChild(div)
-        div.appendChild(title)
-        div.appendChild(img)
-        div.appendChild(priceTag)
-        div.classList.add("item", "shop-item")
-        div.addEventListener("click", this.buy.bind(this))
-
-        img.src = tool.scalledPath
-        title.innerHTML = tool.title
-        priceTag.innerHTML = `${tool.cost} $`;
-
-        this.tool = tool
-
-        Menu.shopMenu.controls.push(this)
-    }
-
-    //na razie
-    public equip()
-    {
-        currentTool = this.tool
-        currentTool.updateCursor()
-    }
-
-    public buy()
-    {
-        if (money < this.tool.cost || this.tool == currentTool)
-        {
-            return
-        }
-
-        money -= this.tool.cost
-        currentTool = this.tool
-
-        Menu.shopMenu.close()
-        updateLabels()
-    }
-
-    public static init()
-    {
-        for (const tool of Tool.tools)
-        {
-            new ShopItems(tool)
-        }
-    }
 }
