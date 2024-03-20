@@ -134,6 +134,8 @@ dialog {
 dialog.menu-dialog {
     display: none;
     overflow: hidden;
+
+    background-color: transparent;
 }
 
 dialog.settings {

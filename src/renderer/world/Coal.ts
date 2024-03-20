@@ -13,6 +13,7 @@ class Coal
     price: number = 1;
     amount: number = 0;
     cost: number;
+    rarerness: number = 1;
 
 
     unlocked: boolean = false;

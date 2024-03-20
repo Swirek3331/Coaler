@@ -35,6 +35,9 @@ class Tool
     public static hand: Tool = new Tool("hand", 1, "Ręka", true);
     public static pickaxe: Tool = new Tool("pickaxe", 5, "Kilof");
     public static crowbar: Tool = new Tool("crowbar", 10, "Łom");
+    public static ironHand: Tool = new Tool("iron-hand", 15, "Żelazna ręka");
+    public static diamondPickaxe: Tool = new Tool("diamond-pickaxe", 30, "Diamentowy kilof");
+    public static csharper: Tool = new Tool("csharper", 50, "C#per");
 }
 
 currentTool = Tool.hand;
@@ -80,6 +83,12 @@ class ShopItems
     {
         if (money < this.tool.cost || this.tool == currentTool)
         {
+            return
+        }
+
+        if (currentTool.miningPower > this.tool.miningPower)
+        {
+            this.tool.bought = true
             return
         }
 
