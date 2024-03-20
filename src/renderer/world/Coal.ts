@@ -4,7 +4,7 @@ class Coal
 
     readonly path: string;
     readonly scalledPath: string;
-    readonly smallerPath: string;
+    readonly shopPath: string;
     title: string
 
     readonly baseHardness: number = 10;
@@ -25,7 +25,7 @@ class Coal
     {
         this.path = `../assets/sprites/coals/normal/${name}.png`;
         this.scalledPath = `../assets/sprites/coals/scalled/${name}.png`;
-        this.smallerPath = `../assets/sprites/coals/smaller/${name}.png`;
+        this.shopPath = `../assets/sprites/coals/shop/${name}.png`;
         this.title = title
 
         this.baseHardness = quadtraticGrowth(4 + Coal.coals.length);

@@ -17,3 +17,8 @@ function nextBackground()
     currentBackground = next
     body.style.backgroundImage = `url(../assets/sprites/backgrounds/scalled/${backgroundKey}${currentBackground}.png)`;
 }
+
+function moveBackground()
+{
+    
+}

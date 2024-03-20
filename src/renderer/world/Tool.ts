@@ -29,9 +29,9 @@ class Tool
         coalButton.style.cursor = `url(${this.scalledPath}), auto`;
     }
 
-    public static hand: Tool = new Tool("hand");
-    public static pickaxe: Tool = new Tool("pickaxe", 5);
-    public static crowbar: Tool = new Tool("crowbar", 10);
+    public static hand: Tool = new Tool("hand", 1, "Ręka");
+    public static pickaxe: Tool = new Tool("pickaxe", 5, "Kilof");
+    public static crowbar: Tool = new Tool("crowbar", 10, "Łom");
 }
 
 currentTool = Tool.hand;
