@@ -10,6 +10,7 @@ Menu.sellMenu.controlsContainer.appendChild(sellCoals)
 Menu.sellMenu.controlsContainer.appendChild(sellNewFunds)
 Menu.sellMenu.controlsContainer.appendChild(sellButton)
 
+sellButton.innerHTML = "Sprzedaj wszystko";
 sellButton.addEventListener("click", Coal.sellAll)
 
 function updateLabels() :void
