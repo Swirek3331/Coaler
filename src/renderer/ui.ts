@@ -27,4 +27,5 @@ function updateLabels() :void
     sellNewFunds.innerHTML = `Fundusze po sprzedaży: ${Coal.funds()}$`;
 
     Coal.updateLabels()
+    CoalItem.update()
 }

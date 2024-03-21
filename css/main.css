@@ -18,7 +18,7 @@ body {
     overflow: hidden;
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 aside {
@@ -94,6 +94,7 @@ main {
 
         & ul {
             padding: 3rem;
+            padding-left: 4rem;
 
             text-align: center;
             list-style-type: none;
@@ -116,7 +117,16 @@ div#grey-div {
 
     div {
         width: 20%;
-        background-color: grey;
+
+        background-color: transparent;
+        background-image: url(../assets/sprites/ui/sign_menu-scalled.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        & h2 {
+            text-align: center;
+            padding-top: 4rem;
+        }
     }
 }
 

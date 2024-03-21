@@ -26,6 +26,7 @@ class Menu {
 
         const label = document.createElement("h2")
         this.container.appendChild(label)
+
         label.innerHTML = title
         
 

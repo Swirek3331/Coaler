@@ -127,6 +127,18 @@ class Coal
         currentCoal.amount += coalAmount;
         currentCoal.health = coalHealthBar.max
         
+        let buffer = new Array<Coal>()
+
+        for (const coal of Coal.coals)
+        {
+            if (coal.unlocked)
+            {
+                buffer.push(coal)
+            }
+        }
+
+        currentCoal = buffer[randomInt(0, buffer.length - 1)]
+        
         if (coalShow)
         {
             currentCoal = Coal.nextCoal(currentCoal)
@@ -274,8 +286,12 @@ class CoalItem //extends Item
             return
         }
 
+        if (this.coal.hardnes >= currentCoal.hardnes)
+        {
+            currentCoal = this.coal
+        }
+
         money -= this.coal.cost
-        currentCoal = this.coal
 
         this.coal.unlock()
         this.div.remove()
@@ -303,6 +319,11 @@ class CoalItem //extends Item
         for (const flexDiv of Menu.coalsMenu.controlsContainer.children)
         {
             if (flexDiv.children.length == 0)
+            {
+                flexDiv.remove()
+            }
+
+            if (coalShow)
             {
                 flexDiv.remove()
             }
