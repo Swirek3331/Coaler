@@ -107,6 +107,7 @@ class ShopItems
         if (currentTool.miningPower > this.tool.miningPower)
         {
             this.tool.bought = true
+            this.div.remove()
             return
         }
 
