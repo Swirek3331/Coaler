@@ -15,4 +15,12 @@ public class Menager : MonoBehaviour
         Debug.Log("Coal amount: " + coalAmount);
         coalLabel.text = coalAmount.ToString();
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AddCoal();
+        }
+    }
 }
